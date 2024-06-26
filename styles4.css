@@ -1,0 +1,39 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+    background-image: url('fundo-escuro.jpg'), url('campo.jpg');
+}
+
+.score-board {
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.sheep {
+    width: 8vw;
+    height: 12vw;
+    background: url('images/sheep1.PNG') no-repeat center center;
+    position: absolute;
+    display: none;
+    cursor: pointer;
+}
+
+
+.initial-video {
+    width: 20vw;
+    align-items: center;
+}
+
+.container-sheep {
+    text-align: center;
+    display: none;
+    text-align: center;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}

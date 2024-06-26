@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ricardo Reis</title>
+    <link rel="stylesheet" href="styles1.css">
+</head>
+
+<body>
+  <a href="index.html">
+    <button class="navigator">
+        Voltar Para Principal
+    </button>
+    </a>
+
+    <div id="set-height"></div>
+
+    <video id="v0" tabindex="0", autobuffer preload>
+        <source type='video/mp4;codecs="avc1.42E01E, mp4a.40.2"' src="images/video.mp4"></source>
+    </video>
+
+    <script src="script1.js"></script>
+
+   
+
+    <script>
+
+        enterView({
+            selector: 'section',
+            enter: function(el) {
+                el.classList.add('entered');
+            }
+        })
+
+        var frameNumber = 0,
+        playbackConst = 800, 
+        setHeight = document.getElementById("set-height"), 
+        vid = document.getElementById('v0'); 
+  
+
+    vid.addEventListener('loadedmetadata', function() {
+    setHeight.style.height = Math.floor(vid.duration) * playbackConst + "px";
+    });
+
+
+
+    function scrollPlay(){  
+    var frameNumber  = window.pageYOffset/playbackConst;
+    vid.currentTime  = frameNumber;
+    window.requestAnimationFrame(scrollPlay);
+    }
+
+    window.requestAnimationFrame(scrollPlay);
+    
+    </script>
+</body>
+</html>

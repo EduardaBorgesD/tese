@@ -1,0 +1,67 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: 'Rammetto One', sans-serif;
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 100%;
+    height: 52vw;
+    position: absolute;
+}
+
+.alvaro {
+    width: 80vw;
+    height: auto;
+}
+
+#alvaromeio {
+    display: none;
+}
+
+.fumo {
+    width: 50vw;
+    height: auto;
+    position: absolute;
+}
+
+.text {
+    text-align: center;
+}
+
+.fumodepois {
+    height: auto;
+    animation: floatUp 5s ease-in-out forwards;
+    position: absolute;
+}
+
+
+@keyframes floatUp {
+    0% {
+        top: 30vw;
+        width: 5vw;
+        left: 40vw;
+    }
+    20% {
+        left: 37vw;
+    }
+    42% {
+        left: 42vw;
+    
+    }
+    57% {
+        left: 38vw;
+    
+    }
+    100% {
+        top: -9vw;
+        width: var(--width-vw, 10vw);
+        left: var(--esq-vw, 0vw);
+    }
+}

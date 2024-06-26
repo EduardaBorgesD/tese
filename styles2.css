@@ -1,0 +1,179 @@
+body {
+    font-family: 'Rammetto One', sans-serif;
+    overflow: hidden;
+  }
+
+.rascunho{
+    width: 100vw;
+    height: auto;
+    top:0vw;
+    display: block;
+    position: absolute;
+    margin: 0 auto;
+    opacity: 80%;
+    display: none;
+}
+
+.texto2{
+    text-align: center;
+    left: 29vw;
+    font-size: 2vw;
+}
+
+.texto3{
+    text-align: center;
+    left: 29vw;
+    font-size: 2vw;
+    display: none;
+}
+
+.texto4{
+    text-align: center;
+    left: 29vw;
+    font-size: 2vw;
+    display: none;
+}
+
+.texto5{
+    text-align: center;
+    left: 29vw;
+    font-size: 2vw;
+    display: none;
+}
+
+.texto6{
+    text-align: center;
+    left: 29vw;
+    font-size: 2vw;
+    display: none;
+}
+
+
+
+#lottie1{
+    width: 12.5vw;
+    height: auto;
+    position: absolute;
+    top: 10.4vw;
+    left: 66.8vw;
+
+}
+
+#lottie2{
+    width: 13vw;
+    height: auto;
+    position: absolute;
+    top: 8.67vw;
+    left: 76vw;
+}
+
+
+.container-2{
+    position: absolute;
+    left: 40vw;
+    top: 23vw;
+}
+
+#lottie3{
+    width: 14.7vw;
+    height: auto;
+    position: absolute;
+    top: -0.5vw;
+    left: 72.7vw;
+}
+
+#lottie4{
+    width: 11.9vw;
+    height: auto;
+    position: absolute;
+    top: 3.62vw;
+    left: 58.1vw;
+}
+
+#lottie5{
+    width: 12.7vw;
+    height: auto;
+    position: absolute;
+    top: 2.1vw;
+    left: 66.4vw;
+    
+}
+
+#lottie6{
+    width: 10vw;
+    height: auto;
+    position: absolute;
+    top: 31.4vw;
+    left: 60vw;
+    
+}
+
+#lottie7{
+    width: 14vw;
+    height: auto;
+    position: absolute;
+    top: 34.8vw;
+    left: 63.4vw;
+    
+}
+
+#lottie8{
+    width: 14vw;
+    height: auto;
+    position: absolute;
+    top: 21.7vw;
+    left: 72.5vw;
+    
+}
+
+#lottie9{
+    width: 17.1vw;
+    height: auto;
+    position: absolute;
+    top: 15.5vw;
+    left: 68.4vw;
+    
+}
+
+
+#lottie11{
+    width: 10.3vw;
+    height: auto;
+    position: absolute;
+    top: 11.98vw;
+    left: 58.27vw;
+    
+}
+
+#pessoa1{
+    width: 11.7vw;
+    height: auto;
+    position: absolute;
+    top: 19.2vw;
+    left: 80.25vw;
+    
+}
+
+#pessoa2{
+    width: 14.9vw;
+    height: auto;
+    position: absolute;
+    top: 16.9vw;
+    left: -1.40vw;
+}
+
+#pessoa3{
+    width: 9.85vw;
+    height: auto;
+    position: absolute;
+    top: 33.50vw;
+    left: 52.55vw;
+}
+
+#pessoa4{
+    width: 12.9vw;
+    height: auto;
+    position: absolute;
+    top: 29.25vw;
+    left: 10.68vw;
+}

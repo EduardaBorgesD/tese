@@ -1,0 +1,198 @@
+
+body {
+  font-family: 'Rammetto One', sans-serif;
+  overflow: hidden;
+}
+.hidden {
+  display: none;
+}
+
+.texto{
+  margin-top: 38vw;
+  line-height: 0.5vw;
+}
+
+.nao-sei {
+  position: relative;
+  width: 100vw;
+  text-align: center;
+  font-size: 8.6vw;
+  line-height: 13vw;
+}
+
+.nao-sei p {
+  margin-top: -15.2vw;
+  line-height: 1vw;
+}
+
+.navigator {
+  align-items: center;
+}
+
+
+.nando {
+  font-size: 8vw; 
+  position: relative;
+  width: 100%;
+  text-align: center;
+  animation: bounceInDown;
+  animation-duration: 5s;
+}
+
+.nando span {
+  padding-bottom: 0;
+  border-bottom: 0;
+  color: white;
+  -webkit-text-stroke: 0.2vw black;
+
+}
+
+.img_fernando img {
+  position: absolute;
+  top: 0.01vw;
+  left: 50%; 
+  transform: translateX(-50%);
+  width: 23vw; 
+  height: auto;
+}
+
+
+.img_alberto img {
+  position: absolute;
+  top: 1vw; 
+  left: 50%; 
+  transform: translateX(-50%);
+  width: 18vw; 
+  height: auto;
+}
+
+.alberto {
+  font-size: 8.7vw; 
+  position: relative;
+  width: 100%;
+  text-align: center;
+  animation: bounceInDown;
+  animation-duration: 5s;
+}
+
+.alberto span {
+  padding-bottom: 0;
+  border-bottom: 0;
+  color: white;
+  -webkit-text-stroke: 0.2vw black;
+}
+
+
+.img_alvaro img {
+  position: absolute;
+  top: 0.2vw; 
+  left: 50%; 
+  transform: translateX(-50%);
+  width: 20vw; 
+  height: auto;
+}
+
+.alvaro {
+  font-size: 7.4vw; 
+  position: relative;
+  width: 100%;
+  text-align: center;
+  animation: bounceInDown;
+  animation-duration: 5s;
+}
+
+.alvaro span {
+  padding-bottom: 0;
+  border-bottom: 0;
+  color: white;
+  -webkit-text-stroke: 0.2vw black;
+}
+
+
+
+.img_ricardo img {
+  position: absolute;
+  top: 0.5vw; 
+  left: 50%; 
+  transform: translateX(-50%);
+  width: 18vw; 
+  height: auto;
+}
+
+
+
+.ricardo {
+  font-size: 9vw; 
+  position: relative;
+  width: 100%;
+  text-align: center;
+  animation: bounceInDown;
+  animation-duration: 5s;
+}
+
+.ricardo span {
+  padding-bottom: 0;
+  border-bottom: 0;
+  color: white;
+  -webkit-text-stroke: 0.2vw black;
+}
+
+@keyframes drop {
+  0% {
+    transform: translateY(-200px);
+    opacity: 0;
+  }
+  20% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+  40% {
+    transform: translateY(-30px);
+    opacity: 1;
+  }
+  60% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+  80% {
+    transform: translateY(-10px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+.nao-sei {
+  opacity:0;
+  animation: drop .9s linear forwards;
+  color: #353535;
+}
+
+.ricardo, .alberto, .alvaro, .nando {
+  opacity:0;
+  animation: drop 1.2s linear forwards;
+}
+
+.seta5, .seta6, .seta7, .seta8{
+  position: absolute;
+  border-radius: 9vw;
+  top: 24vw;
+  left: 3vw;
+  background-color: #353535;
+  -webkit-text-fill-color: white;
+  font-size: 2vw;
+  padding: 1vw 2.2vw 1vw 2.2vw;
+}
+
+.seta4, .seta1, .seta2, .seta3{
+  position: absolute;
+  border-radius: 9vw;
+  top: 24vw;
+  left: 91vw;
+  background-color:  #353535;
+  -webkit-text-fill-color: white;
+  font-size: 2vw;
+  padding: 1vw 2.2vw 1vw 2.2vw;
+}
