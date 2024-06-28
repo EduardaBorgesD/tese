@@ -11,7 +11,7 @@ body {
 
 .g_sheep{
     width: 30vw;
-    position: relative;
+    position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
@@ -20,7 +20,7 @@ body {
 .i_sheep {
     width: 10vw;
     height: auto;
-    position: relative;
+    position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
