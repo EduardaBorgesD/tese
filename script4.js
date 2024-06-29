@@ -1,15 +1,14 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const sheep = document.getElementById('sheep');
-    const gifSheep = document.getElementById('ap_sheep');
-    const imgSheep = document.getElementById('i_sheep');
-    let sheepTimer;
     let sheepsClicked = 0;
-    const totalSheep = 15;
+    const totalSheep = 1;
     const gameContainer = document.querySelector('.container-sheep');
     const video = document.querySelector(".ac1");
     const video2 = document.querySelector(".ac2");
     const gamedisplay = document.getElementById("gamedisplay");
-
+    let Interval = 3500;
+    const finalSheep = 30;
+    const alberto = document.querySelector('.pc_alberto');
+   
     setTimeout(() => {
         video2.style.display = 'block';
         video.style.display = 'none';
@@ -18,47 +17,112 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => {
         if (video2.style.display === "block") {
             gamedisplay.style.display = 'block';
-            moveSheep();
+            initializeSheep();
         }
-    }, 4000); 
+    }, 4000);
 
-    function randomPosition() {
-        const containerWidth = gameContainer.clientWidth;
-        const containerHeight = gameContainer.clientHeight;
-        const sheepWidth = sheep.clientWidth;
-        const sheepHeight = sheep.clientHeight;
+    function createSheep() {
+        const sheep = document.createElement('div');
+        sheep.classList.add('sheep');
 
-        const randomX = Math.floor(Math.random() * (containerWidth - sheepWidth));
-        const randomY = Math.floor(Math.random() * (containerHeight - sheepHeight));
+        const gifSheep = document.createElement('img');
+        gifSheep.src = 'images/sheep_appear.gif';
+        gifSheep.alt = 'Pop up Ovelha';
+        gifSheep.classList.add('g_sheep');
+        gifSheep.style.position = 'absolute';
 
-        sheep.style.left = `${randomX}px`;
-        sheep.style.top = `${randomY}px`;
-        sheep.style.display = 'block';
+        const imgSheep = document.createElement('img');
+        imgSheep.src = 'images/sheep1.GIF';
+        imgSheep.alt = 'Ovelha';
+        imgSheep.classList.add('i_sheep');
+        imgSheep.style.position = 'absolute';
+        imgSheep.style.display = 'none';
 
+        sheep.appendChild(gifSheep);
+        sheep.appendChild(imgSheep);
+
+        gameContainer.appendChild(sheep);
+
+        sheep.addEventListener('mousedown', () => {
+            console.log('Sheep clicked!');
+            sheep.style.display = 'none';
+            sheepsClicked++;
+
+            if (sheepsClicked >= totalSheep * finalSheep) {
+                removeAllSheep();
+            } else {
+                initializeSheep();
+            }
+
+            const opacity = sheepsClicked / (totalSheep * finalSheep);
+            gameContainer.classList.add('faded');
+            setTimeout(() => {
+                gameContainer.style.background = `linear-gradient(rgba(255,255,255,${1 - opacity}), rgba(255,255,255,${1 - opacity})), url('images/campo.jpg') no-repeat center center`;
+                gameContainer.style.backgroundSize = 'cover';
+            }, 50);
+        });
+
+        return { sheep, gifSheep, imgSheep };
+    }
+
+    function randomPosition(sheepElement) {
+        const windowWidth = window.innerWidth;
+        const windowHeight = window.innerHeight;
+        const sheepWidth = sheepElement.clientWidth;
+        const sheepHeight = sheepElement.clientHeight;
+
+        const marginX = windowWidth / 5;
+        const marginY = windowHeight / 5;
+
+        const albertoRect = alberto.getBoundingClientRect();
+
+        let randomX, randomY;
+        do {
+            randomX = Math.floor(Math.random() * (windowWidth - 2 * marginX - sheepWidth)) + marginX;
+            randomY = Math.floor(Math.random() * (windowHeight - 2 * marginY - sheepHeight)) + marginY;
+        } while (
+            randomX < albertoRect.right && randomX + sheepWidth > albertoRect.left &&
+            randomY < albertoRect.bottom && randomY + sheepHeight > albertoRect.top
+        );
+
+        sheepElement.style.left = `${randomX}px`;
+        sheepElement.style.top = `${randomY}px`;
+        sheepElement.style.display = 'block';
+
+        const gifSheep = sheepElement.querySelector('.g_sheep');
+        const imgSheep = sheepElement.querySelector('.i_sheep');
+        
+        gifSheep.style.left = `0px`;
+        gifSheep.style.top = `0px`;
         gifSheep.style.display = 'block';
+        gifSheep.src = gifSheep.src;
+
+        imgSheep.style.left = `0px`;
+        imgSheep.style.top = `0px`;
         imgSheep.style.display = 'none';
 
         setTimeout(() => {
             gifSheep.style.display = 'none';
             imgSheep.style.display = 'block';
+            imgSheep.classList.add('animate-sheep');
         }, 1000);
     }
 
-    sheep.addEventListener('mousedown', () => {
-        sheep.style.display = 'none';
-        sheepsClicked++;
-
-        const opacity = sheepsClicked / totalSheep;
-        gameContainer.classList.add('faded');
-        setTimeout(() => {
-            gameContainer.style.background = `linear-gradient(rgba(255,255,255,${1 - opacity}), rgba(255,255,255,${1 - opacity})), url('images/campo.jpg') no-repeat center center`;
-            gameContainer.style.backgroundSize = 'cover';
-        }, 50);
-    });
-
-    function moveSheep() {
-        const inc_timer=500;
-        sheepsClicked = 0;
-        sheepTimer = setInterval(randomPosition, 4000-inc_timer);
+    function moveSheep(sheepElement) {
+        randomPosition(sheepElement);
+        setInterval(() => randomPosition(sheepElement), Interval);
     }
+
+    function initializeSheep() {
+        for (let i = 0; i < totalSheep; i++) {
+            const { sheep } = createSheep();
+            console.log('Sheep created:', sheep);
+            moveSheep(sheep);
+        }
+    }
+
+function removeAllSheep() {
+    const sheeps = document.querySelectorAll('.sheep');
+    sheeps.forEach(sheep => sheep.remove());
+}
 });
