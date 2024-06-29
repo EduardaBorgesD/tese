@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const gameContainer = document.querySelector('.container-sheep');
     const video = document.querySelector(".ac1");
     const video2 = document.querySelector(".ac2");
+    const video3 = document.querySelector(".ac3");
     const gamedisplay = document.getElementById("gamedisplay");
     let Interval = 3500;
     const finalSheep = 30;
@@ -124,5 +125,11 @@ document.addEventListener('DOMContentLoaded', () => {
 function removeAllSheep() {
     const sheeps = document.querySelectorAll('.sheep');
     sheeps.forEach(sheep => sheep.remove());
+    setTimeout(() => {
+        video3.style.display = 'block';
+        video2.style.display = 'none';
+        }
+     , 500);
+
 }
 });
