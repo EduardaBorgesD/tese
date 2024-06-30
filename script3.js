@@ -37,7 +37,7 @@ function restart() {
     svg.parentNode.replaceChild(newSVG, svg);
 }
 
-const svgIds = ['alvarobolha', 'alvarobolha2', 'alvarobolha3', 'alvarobolha4', 'alvarobolha5'];
+const svgIds = ['alvarobolha', 'alvarobolha2', 'alvarobolha3', 'alvarobolha4'];
 
 function getRandomSvgId() {
     const randomIndex = Math.floor(Math.random() * svgIds.length);
@@ -62,6 +62,6 @@ function showRandomSvg() {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-    var tamVW = Math.random() * 45;
+    var tamVW = Math.random() * 25;
     document.documentElement.style.setProperty('--tam-vw', tamVW + 'vw');
 });

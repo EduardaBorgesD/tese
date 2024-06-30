@@ -5,6 +5,24 @@ body, html {
     height: 100%;
     font-family: 'Rammetto One', sans-serif;
     overflow: hidden;
+    background: url('.background');
+    background-size: cover;
+}
+
+.background{
+    align-items: center;
+}
+
+.background img{
+    width: 100vw;
+    height: auto;
+    top: -10vw;
+    position: absolute;
+    opacity: 80%;
+}
+
+.navigator{
+    position: absolute;
 }
 
 .container {
@@ -13,12 +31,19 @@ body, html {
     align-items: flex-end;
     width: 100%;
     height: 52vw;
+    left: 5vw;
     position: absolute;
 }
 
+#fumo-container{
+    left: 5vw;
+    top: -15vw;
+}
+
 .alvaro {
-    width: 80vw;
+    width: 70vw;
     height: auto;
+    transform: rotate(10deg);
 }
 
 #alvaromeio {
@@ -33,6 +58,12 @@ body, html {
 
 .text {
     text-align: center;
+    position: absolute;
+    top: 2vw;
+}
+
+.texto{
+    justify-content: center;
 }
 
 .fumodepois {
