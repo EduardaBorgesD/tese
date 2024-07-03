@@ -1,5 +1,4 @@
 
-
 function mudarparaAlberto() {
     document.getElementById('fernandopessoa').classList.toggle('hidden');
     document.getElementById('albertocaeiro').classList.toggle('hidden');
