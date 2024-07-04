@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     let sheepsClicked = 0;
-    const totalSheep = 1;
+    let totalSheep = 15;
     const gameContainer = document.querySelector('.container-sheep');
     const video = document.querySelector(".ac1");
     const video2 = document.querySelector(".ac2");
@@ -9,7 +9,8 @@ document.addEventListener('DOMContentLoaded', () => {
     let Interval = 3500;
     const finalSheep = 30;
     const alberto = document.querySelector('.pc_alberto');
-   
+    const minSpacing = 100; 
+
     setTimeout(() => {
         video2.style.display = 'block';
         video.style.display = 'none';
@@ -46,16 +47,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
         sheep.addEventListener('mousedown', () => {
             console.log('Sheep clicked!');
-            sheep.style.display = 'none';
+            sheep.remove(); 
             sheepsClicked++;
+            totalSheep = Math.max(4, totalSheep - 1);
+            console.log('Total sheep:', totalSheep);
 
-            if (sheepsClicked >= totalSheep * finalSheep) {
+            if (sheepsClicked >= finalSheep) {
                 removeAllSheep();
             } else {
                 initializeSheep();
             }
 
-            const opacity = sheepsClicked / (totalSheep * finalSheep);
+            const opacity = sheepsClicked / finalSheep;
             gameContainer.classList.add('faded');
             setTimeout(() => {
                 gameContainer.style.background = `linear-gradient(rgba(255,255,255,${1 - opacity}), rgba(255,255,255,${1 - opacity})), url('images/campo.jpg') no-repeat center center`;
@@ -76,14 +79,20 @@ document.addEventListener('DOMContentLoaded', () => {
         const marginY = windowHeight / 5;
 
         const albertoRect = alberto.getBoundingClientRect();
+        const existingSheep = Array.from(document.querySelectorAll('.sheep')).filter(sheep => sheep !== sheepElement);
 
-        let randomX, randomY;
+        let randomX, randomY, validPosition;
         do {
             randomX = Math.floor(Math.random() * (windowWidth - 2 * marginX - sheepWidth)) + marginX;
             randomY = Math.floor(Math.random() * (windowHeight - 2 * marginY - sheepHeight)) + marginY;
+            validPosition = existingSheep.every(sheep => {
+                const rect = sheep.getBoundingClientRect();
+                return Math.abs(randomX - rect.left) > sheepWidth + minSpacing || Math.abs(randomY - rect.top) > sheepHeight + minSpacing;
+            });
         } while (
-            randomX < albertoRect.right && randomX + sheepWidth > albertoRect.left &&
-            randomY < albertoRect.bottom && randomY + sheepHeight > albertoRect.top
+            !validPosition ||
+            (randomX < albertoRect.right && randomX + sheepWidth > albertoRect.left &&
+            randomY < albertoRect.bottom && randomY + sheepHeight > albertoRect.top)
         );
 
         sheepElement.style.left = `${randomX}px`;
@@ -92,7 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const gifSheep = sheepElement.querySelector('.g_sheep');
         const imgSheep = sheepElement.querySelector('.i_sheep');
-        
+
         gifSheep.style.left = `0px`;
         gifSheep.style.top = `0px`;
         gifSheep.style.display = 'block';
@@ -115,6 +124,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function initializeSheep() {
+        const existingSheep = document.querySelectorAll('.sheep');
+        existingSheep.forEach(sheep => sheep.remove());
+
         for (let i = 0; i < totalSheep; i++) {
             const { sheep } = createSheep();
             console.log('Sheep created:', sheep);
@@ -122,14 +134,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-function removeAllSheep() {
-    const sheeps = document.querySelectorAll('.sheep');
-    sheeps.forEach(sheep => sheep.remove());
-    setTimeout(() => {
-        video3.style.display = 'block';
-        video2.style.display = 'none';
-        }
-     , 500);
-
-}
+    function removeAllSheep() {
+        const sheeps = document.querySelectorAll('.sheep');
+        sheeps.forEach(sheep => sheep.remove());
+        setTimeout(() => {
+            video3.style.display = 'block';
+            video2.style.display = 'none';
+        }, 500);
+    }
 });
