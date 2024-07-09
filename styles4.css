@@ -18,7 +18,6 @@ body {
     top: 5vw;
 }
 
-
 .i_sheep.animate-sheep {
     animation: ani-sheep 2s infinite alternate; 
 }

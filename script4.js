@@ -55,7 +55,11 @@ document.addEventListener('DOMContentLoaded', () => {
             if (sheepsClicked >= finalSheep) {
                 removeAllSheep();
             } else {
-                initializeSheep();
+                if (document.querySelectorAll('.sheep').length < totalSheep) {
+                    const { sheep } = createSheep();
+                    console.log('New sheep created:', sheep);
+                    moveSheep(sheep);
+                }
             }
 
             const opacity = sheepsClicked / finalSheep;
@@ -129,7 +133,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         for (let i = 0; i < totalSheep; i++) {
             const { sheep } = createSheep();
-            console.log('Sheep created:', sheep);
+            console.log('ovelhas:', sheep);
             moveSheep(sheep);
         }
     }
