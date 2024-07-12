@@ -10,8 +10,8 @@ body {
     display: block;
     position: absolute;
     margin: 0 auto;
-    opacity: 80%;
-    display: none;
+    opacity: 60%;
+    pointer-events: none;
 }
 
 .texto2{
