@@ -18,7 +18,34 @@ body, html {
     height: auto;
     top: -10vw;
     position: absolute;
-    opacity: 80%;
+}
+
+#janela{
+    width: 93vw;
+    left: 3.5vw;
+    top: -8vw;
+}
+
+#candeeiro1{
+    width:90vw;
+    top:-2vw;
+    left:7vw;
+}
+
+#candeeiro2{
+    width:90vw;
+    top:-2vw;
+    left:-28vw;
+}
+
+#cortina{
+    width: 100vw;
+    top:-5vw;
+}
+
+#opio{
+    width: 90vw;
+    left: 4vw;
 }
 
 .navigator{
@@ -72,6 +99,13 @@ body, html {
     position: absolute;
 }
 
+.img_guia img{
+    opacity: 50%;
+    width: 100vw;
+    height: auto;
+    top: -10vw;
+    position: absolute;
+}
 
 @keyframes floatUp {
     0% {

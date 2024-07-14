@@ -1,41 +1,45 @@
+const headContainers = document.querySelectorAll('.head-container');
 
-function mudarparaAlberto() {
-    document.getElementById('fernandopessoa').classList.toggle('hidden');
-    document.getElementById('albertocaeiro').classList.toggle('hidden');
+function rotateHeads(event) {
+    const mouseX = event.clientX;
+    const windowCenterX = window.innerWidth / 2;
+    const maxRotation = 10; 
+    const rotation = (mouseX - windowCenterX) / windowCenterX * maxRotation;
+
+    headContainers.forEach(headContainer => {
+        headContainer.style.transform = `rotate(${rotation}deg)`;
+    });
 }
 
-function mudarparaAlvaro() {
-    document.getElementById('albertocaeiro').classList.toggle('hidden');
-    document.getElementById('alvarodecampos').classList.toggle('hidden');
-}
+window.addEventListener('mousemove', rotateHeads);
 
-function mudarparaRicardo() {
-    document.getElementById('alvarodecampos').classList.toggle('hidden');
-    document.getElementById('ricardoreis').classList.toggle('hidden');
-}
+/* document.addEventListener('DOMContentLoaded', (event) => {
+    console.log('DOM fully loaded and parsed');
 
-function mudarparaFernando() {
-    document.getElementById('ricardoreis').classList.toggle('hidden');
-    document.getElementById('fernandopessoa').classList.toggle('hidden');
-}
+    document.addEventListener('mousemove', (e) => {
+        const mouseX = e.clientX;
+        const mouseY = e.clientY;
+        const anchor = document.getElementById('anchor');
+        if (!anchor) {
+            console.error('Anchor element not found');
+            return; // Check if anchor is null
+        }
+        const rekt = anchor.getBoundingClientRect();
+        const anchorX = rekt.left + rekt.width / 2;
+        const anchorY = rekt.top + rekt.height / 2;
+        const angleDeg = angle(mouseX, mouseY, anchorX, anchorY);
 
-function mudarparaRicardo1() {
-    document.getElementById('fernandopessoa').classList.toggle('hidden');
-    document.getElementById('ricardoreis').classList.toggle('hidden');
-}
+        const eyes = document.querySelectorAll('.eye');
+        eyes.forEach(eye =>{
+            eye.style.transform = `rotate(${10+ angleDeg}deg)`;
+        })
+    });
 
-function mudarparaFernando1() {
-    document.getElementById('albertocaeiro').classList.toggle('hidden');
-    document.getElementById('fernandopessoa').classList.toggle('hidden');
-}
-
-function mudarparaAlvaro1() {
-    document.getElementById('ricardoreis').classList.toggle('hidden');
-    document.getElementById('alvarodecampos').classList.toggle('hidden');
-}
-
-function mudarparaAlberto1() {
-    document.getElementById('alvarodecampos').classList.toggle('hidden');
-    document.getElementById('albertocaeiro').classList.toggle('hidden');
-}
-
+    function angle(cx, cy, ex, ey) {
+        const dy = ey - cy;
+        const dx = ex - cx;
+        const rad = Math.atan2(dy, dx);
+        const deg = rad * 180 / Math.PI;
+        return deg;
+    }
+}); */

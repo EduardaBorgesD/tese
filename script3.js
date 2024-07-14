@@ -65,3 +65,5 @@ document.addEventListener('DOMContentLoaded', function() {
     var tamVW = Math.random() * 25;
     document.documentElement.style.setProperty('--tam-vw', tamVW + 'vw');
 });
+
+// nome.style.filter = `hue-rotate(${angleDeg}deg)`; ver isto depois //
