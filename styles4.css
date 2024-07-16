@@ -1,13 +1,14 @@
 body {
     font-family: Arial, sans-serif;
     overflow: hidden;
+    background-image: url("images/fundo-escuro.PNG");
 }
 
 .sheep {
     position: absolute;
     cursor: pointer;
     transform: scale(0.1);
-    z-index: 999;
+    z-index: 3;
 }
 
 .initial-video {
@@ -19,29 +20,21 @@ body {
 }
 
 .i_sheep.animate-sheep {
-    animation: ani-sheep 2s infinite alternate; 
+    animation: ani-sheep1 2s infinite alternate; 
 }
 
-@keyframes ani-sheep {
+@keyframes ani-sheep1 {
     0% {
         transform: translateY(0);
     }
-    100% {
-        transform: translateY(2vw);
+    50% {
+        transform: translateY(20vw);
+    }
+    100%{
+        transform:translateY(-20vw);
     }
 }
 
-.ac1, .ac2 {
-    width: 90vw;
-    height: auto;
-}
-
-.ac3 {
-    position: absolute;
-    width: 90vw;
-    height: auto;
-    left: 30vw;
-}
 
 .container-sheep {
     text-align: center;
@@ -49,14 +42,8 @@ body {
     overflow: hidden;
     width: 100vw;
     height: 100vh; 
-    background: url('images/fundo-escuro.jpg') no-repeat center center;
-    background-size: cover; 
     transition: 4s ease; 
-}
-
-.container-sheep.faded {
-    background: url('images/campo.jpg') no-repeat center center;
-    background-size: cover;
+    z-index: 2;
 }
 
 .pc_alberto {
@@ -73,4 +60,23 @@ body {
     height: 100vh; 
     margin: 2vw; 
     opacity: 0%;
+}
+
+.background{
+    width: 100vw;
+    height: auto;
+    z-index: 1;
+}
+
+.video1{
+    width: 100vw;
+    height: auto;
+}
+
+.video{
+    z-index: 4;
+}
+
+.navigator{
+    z-index: 5;
 }

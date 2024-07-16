@@ -69,12 +69,11 @@ body {
   position: absolute;
   flex-wrap: wrap;
   align-items: center;
-  margin-left: 2vw;
   top: 3.2vw;
 }
 
 .row img {
-  margin: 2.8vw;
+  margin: -2vw;
 }
 
 .img_alvaro img {
@@ -263,12 +262,13 @@ body {
 }
 
 .img_alberto {
-  width: 28vw;
-  position: relative;
+  width: 30vw;
+  position: absolute;
 }
 
 #eyes img {
   position: absolute;
+  rotate: 20%;
 }
 
 .eye {
@@ -276,7 +276,11 @@ body {
 }
 
 .head-container {
-  position: relative;
+  position: absolute;
   display: inline-block;
   top: -8.2vw;
+}
+
+.monoculo{
+  position: absolute;
 }

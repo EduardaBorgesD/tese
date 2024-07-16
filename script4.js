@@ -2,31 +2,19 @@ document.addEventListener('DOMContentLoaded', () => {
     let sheepsClicked = 0;
     let totalSheep = 15;
     const gameContainer = document.querySelector('.container-sheep');
-    const video = document.querySelector(".ac1");
-    const video2 = document.querySelector(".ac2");
-    const video3 = document.querySelector(".ac3");
     const gamedisplay = document.getElementById("gamedisplay");
-    let Interval = 3500;
     const finalSheep = 30;
-    const alberto = document.querySelector('.pc_alberto');
-    const minSpacing = 100; 
+    const minSpacing = 20; 
+    const Interval = 3500;
 
     setTimeout(() => {
-        video2.style.display = 'block';
-        video.style.display = 'none';
-    }, 4000);
-
-    setTimeout(() => {
-        if (video2.style.display === "block") {
-            gamedisplay.style.display = 'block';
-            initializeSheep();
-        }
-    }, 4000);
+        gamedisplay.style.display = 'block';
+        initializeSheep();
+    }, 1000);
 
     function createSheep() {
         const sheep = document.createElement('div');
         sheep.classList.add('sheep');
-
         const gifSheep = document.createElement('img');
         gifSheep.src = 'images/sheep_appear.gif';
         gifSheep.alt = 'Pop up Ovelha';
@@ -56,18 +44,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 removeAllSheep();
             } else {
                 if (document.querySelectorAll('.sheep').length < totalSheep) {
-                    const { sheep } = createSheep();
-                    console.log('New sheep created:', sheep);
-                    moveSheep(sheep);
+                    const newSheep = createSheep();
+                    console.log('New sheep created:', newSheep.sheep);
+                    moveSheep(newSheep.sheep);
                 }
             }
-
-            const opacity = sheepsClicked / finalSheep;
-            gameContainer.classList.add('faded');
-            setTimeout(() => {
-                gameContainer.style.background = `linear-gradient(rgba(255,255,255,${1 - opacity}), rgba(255,255,255,${1 - opacity})), url('images/campo.jpg') no-repeat center center`;
-                gameContainer.style.backgroundSize = 'cover';
-            }, 50);
         });
 
         return { sheep, gifSheep, imgSheep };
@@ -82,7 +63,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const marginX = windowWidth / 5;
         const marginY = windowHeight / 5;
 
-        const albertoRect = alberto.getBoundingClientRect();
         const existingSheep = Array.from(document.querySelectorAll('.sheep')).filter(sheep => sheep !== sheepElement);
 
         let randomX, randomY, validPosition;
@@ -93,11 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const rect = sheep.getBoundingClientRect();
                 return Math.abs(randomX - rect.left) > sheepWidth + minSpacing || Math.abs(randomY - rect.top) > sheepHeight + minSpacing;
             });
-        } while (
-            !validPosition ||
-            (randomX < albertoRect.right && randomX + sheepWidth > albertoRect.left &&
-            randomY < albertoRect.bottom && randomY + sheepHeight > albertoRect.top)
-        );
+        } while (!validPosition); 
 
         sheepElement.style.left = `${randomX}px`;
         sheepElement.style.top = `${randomY}px`;
@@ -142,8 +118,23 @@ document.addEventListener('DOMContentLoaded', () => {
         const sheeps = document.querySelectorAll('.sheep');
         sheeps.forEach(sheep => sheep.remove());
         setTimeout(() => {
-            video3.style.display = 'block';
-            video2.style.display = 'none';
+            document.body.style.backgroundImage = 'none';
+            playVideo1();
         }, 500);
+    }
+
+    function playVideo1() {
+        const video1 = document.querySelector('.video1');
+        video1.style.display = 'block';
+        video1.play();
+        setTimeout(() => {
+            playVideo2(); 
+        }, 5000); 
+    }
+
+    function playVideo2() {
+        const video2 = document.querySelector('.video2');
+        video2.style.display = 'block';
+        video2.play();
     }
 });

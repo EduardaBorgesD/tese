@@ -11,50 +11,40 @@ function rotateHeads(event) {
     });
 }
 
-window.addEventListener('mousemove', rotateHeads);
-
 function eyeball(event) {
     const eyes = document.querySelectorAll('.eye');
     eyes.forEach(function(eye) {
-        let headContainer = eye.closest('.head-container');
+        const headContainer = eye.closest('.head-container');
         if (!headContainer) return;
 
-        let containerRect = headContainer.getBoundingClientRect();
+        const containerRect = headContainer.getBoundingClientRect();
+        const containerCenterX = containerRect.left + containerRect.width / 2;
+        const containerCenterY = containerRect.top + containerRect.height / 2;
 
-        let containerLeft = containerRect.left;
-        let containerTop = containerRect.top;
-        let containerWidth = containerRect.width;
-        let containerHeight = containerRect.height;
+        const mouseX = event.clientX;
+        const mouseY = event.clientY;
 
-        let eyeWidth = eye.clientWidth;
-        let eyeHeight = eye.clientHeight;
+        const deltaX = mouseX - containerCenterX;
+        const deltaY = mouseY - containerCenterY;
 
-        let maxX = containerWidth / 12 - eyeWidth / 2; // limite direito
-        let maxY = containerHeight / 26 - eyeHeight / 2; // limite inferior
-        let minX = -containerWidth / 24 + eyeWidth / 2; // limite esquerdo
-        let minY = -containerHeight / 34 + eyeHeight / 2; // limite superior
-
-        let eyeCenterX = containerLeft + containerWidth / 2;
-        let eyeCenterY = containerTop + containerHeight / 2;
-
-        let mouseX = event.pageX;
-        let mouseY = event.pageY;
-
-        let relativeX = mouseX - eyeCenterX;
-        let relativeY = mouseY - eyeCenterY;
+        const angle = Math.atan2(deltaY, deltaX);
 
 
-        if (relativeX > maxX) relativeX = maxX;
-        if (relativeX < minX) relativeX = minX;
-        if (relativeY > maxY) relativeY = maxY;
-        if (relativeY < minY) relativeY = minY;
+        let distance = Math.min(7, Math.hypot(deltaX, deltaY) / 10);
 
-        let radian = Math.atan2(relativeY, relativeX);
-        let rotation = radian * (180 / Math.PI);
-        rotation *= 0.4;
+        if (headContainer.closest('.img_alberto')) {
+            distance = Math.min(4, Math.hypot(deltaX, deltaY) / 15);
+        }
+        else if (headContainer.closest('.img_ricardo')) {
+            distance = Math.min(3.5, Math.hypot(deltaX, deltaY) / 15);
+        }
 
-        eye.style.transform = `translate(${relativeX}px, ${relativeY}px) rotate(${rotation}deg)`;
+        const x = Math.cos(angle) * distance;
+        const y = Math.sin(angle) * distance;
+
+        eye.style.transform = `translate(${x}px, ${y}px)`;
     });
 }
 
+window.addEventListener('mousemove', rotateHeads);
 window.addEventListener('mousemove', eyeball);
