@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let totalSheep = 15;
     const gameContainer = document.querySelector('.container-sheep');
     const gamedisplay = document.getElementById("gamedisplay");
-    const finalSheep = 30;
+    const finalSheep = 10;
     const minSpacing = 20; 
     const Interval = 3500;
 
@@ -118,7 +118,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const sheeps = document.querySelectorAll('.sheep');
         sheeps.forEach(sheep => sheep.remove());
         setTimeout(() => {
-            document.body.style.backgroundImage = 'none';
             playVideo1();
         }, 500);
     }
@@ -126,15 +125,12 @@ document.addEventListener('DOMContentLoaded', () => {
     function playVideo1() {
         const video1 = document.querySelector('.video1');
         video1.style.display = 'block';
+        document.body.style.backgroundImage = 'none';
         video1.play();
         setTimeout(() => {
-            playVideo2(); 
-        }, 5000); 
-    }
-
-    function playVideo2() {
         const video2 = document.querySelector('.video2');
         video2.style.display = 'block';
         video2.play();
+        }, 1000); 
     }
 });
