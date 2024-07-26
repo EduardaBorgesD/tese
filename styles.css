@@ -1,87 +1,80 @@
 body {
   font-family: 'Rammetto One', sans-serif;
   overflow: hidden;
+  height: 100%;
   margin: 0;
+  background-color: yellow;
 }
 
 .hidden {
   display: none;
 }
 
-.texto {
-  margin-top: 40vw;
-  line-height: 0.5vw;
-  position: absolute;
-}
-
-.nao-sei {
-  width: 100vw;
-  text-align: center;
-  font-size: 8.6vw;
+.nao{
+  font-size: 8.8vw;
   line-height: 1vw;
-}
-
-.nao-sei p {
-  line-height: 1vw;
-}
-
-.navigator {
-  align-items: center;
-}
-
-.buttons {
-  display: flex;
+  left: 0vw;
   position: absolute;
-  flex-wrap: wrap;
-  margin-left: 3vw;
-  top: 40vw;
+  top: 19.8vw;
+}
+.sei{
+  font-size: 8.8vw;
+  line-height: 1vw;
+  left: 27.5vw;
+  position: absolute;
+  top: 19.8vw;
+}
+.quantas{
+  font-size: 8.8vw;
+  line-height: 1vw;
+  left: 45.7vw;
+  position: absolute;
+  top: 19.8vw;
 }
 
-.buttons button {
-  margin: 7.8vw;
+.almas{
+  font-size: 21.2vw;
+  line-height: 1vw;
+  left: 0vw;
+  position: absolute;
+  top: 32.6vw;
+  letter-spacing: 1vw;
 }
 
-.navigator-1,
-.navigator-2,
-.navigator-3,
-.navigator-4 {
-  border-radius: 30vw;
-  border: 5px solid #292929;
-  background: #FFF;
-  box-shadow: 0px 6px 0px 0px #292929;
-  padding: 10px 20px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  cursor: pointer;
-  font-size: 16px;
-  font-weight: bold;
+.tenho{
+  font-size: 22.8vw;
+  line-height: 1vw;
+  left: 0vw;
+  position: absolute;
+  letter-spacing: 1vw;
+  top: 50vw;
+}
+
+.fernando{
+  font-size: 8.2vw;
+  position: absolute;
+  top: 7.4vw;
+  color: #292929;
+}
+.pessoa{
+  font-size: 8.2vw;
+  position: absolute;
+  left: 59vw;
+  top: 7.4vw;
   color: #292929;
 }
 
-.navigator img {
-  width: vw;
-  height: auto;
+
+.texto2{
+  display: none;
 }
 
-.row {
-  display: flex;
-  position: absolute;
-  flex-wrap: wrap;
-  align-items: center;
-  top: 3.2vw;
+.texto3{
+  display: none;
 }
 
-.row img {
-  margin: -2vw;
-}
-
-.img_alvaro img {
-  width: 18vw; 
-}
-
-.img_ricardo img {
-  width: 16vw; 
+.texto4{
+  display: none;
 }
 
 .head {
@@ -116,9 +109,10 @@ body {
 }
 
 .nao-sei {
-  opacity: 0;
   animation: drop 0.9s linear forwards;
-  color: #353535;
+  color: #ffffff;
+  -webkit-text-stroke: 2px #0e2431;
+
 }
 
 .container {
@@ -250,37 +244,86 @@ body {
   display: none;
 }
 
-.body {
-  position: absolute;
-  width: 28vw;
-  top: -8vw;
+.main-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
-.head {
-  transition: transform 0.3s ease;
-  width: 28vw;
+.row-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 80vw;
+  margin: 0 auto;
 }
 
-.img_alberto {
-  width: 30vw;
-  position: absolute;
+.row {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2vw;
+
 }
 
-#eyes img {
-  position: absolute;
-  rotate: 20%;
+.img_container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  top:10vw;
 }
 
-.eye {
-  position: absolute;
+.img_fernando .body,
+.img_fernando .head  {
+  width: 20vw;
 }
 
-.head-container {
-  position: absolute;
-  display: inline-block;
-  top: -8.2vw;
+.img_ricardo .body,
+.img_ricardo .head{
+  width: 18vw;
 }
 
-.monoculo{
-  position: absolute;
+.img_alberto .body,
+.img_alberto .head {
+  width: 22.5vw;
 }
+
+.img_alvaro .body,
+.img_alvaro .head{
+  width: 20vw;
+}
+.img_fernando .head-container,
+.img_alberto .head-container,
+.img_alvaro .head-container,
+.img_ricardo .head-container {
+  position: absolute;
+  top: 0.5vw;
+}
+
+
+
+.img_alvaro .monoculo {
+  position: absolute;
+  width: 20vw;
+  top: 0;
+  left: 0;
+}
+
+.img_fernando .eye{
+  position: absolute;
+  width: 5vw;
+}
+
+.img_alberto .eye{
+  position: absolute;
+  width: 4vw;
+}
+.img_alvaro .eye,
+.img_ricardo .eye {
+  position: absolute;
+  width: 3.5vw;
+}
+
+
