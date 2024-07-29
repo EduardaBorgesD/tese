@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     var vid = document.getElementById('v0');
-    var playbackConst = 1500;
+    var playbackConst = 1800;
     var setHeight = document.getElementById("set-height");
     var scrollContainer = document.querySelector('.scroll');
 

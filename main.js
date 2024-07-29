@@ -78,12 +78,12 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     fernandoImage.addEventListener("mouseenter", function() {
         texto1.style.display = "block";
-        document.body.style.backgroundColor = "blue";
+        document.body.style.backgroundColor = "#FFF6A6";
         setTimeout(addDropAnimation, 10);
     });
     fernandoImage.addEventListener("mouseleave", function() {
         texto1.style.display = "none";
-        document.body.style.backgroundColor = "yellow";
+        document.body.style.backgroundColor = "#FFFFFF";
     });
       
 
@@ -92,11 +92,11 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     albertoImage.addEventListener("mouseenter", function() {
         texto2.style.display = "block";
-        document.body.style.backgroundColor = "green";
+        document.body.style.backgroundColor = "#E6FDA5";
     });
     albertoImage.addEventListener("mouseleave", function() {
     texto2.style.display = "none";
-    document.body.style.backgroundColor = "yellow";
+    document.body.style.backgroundColor = "#FFFFFF";
     });
 
       
@@ -105,11 +105,11 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     alvaroImage.addEventListener("mouseenter", function() {
         texto3.style.display = "block";
-        document.body.style.backgroundColor = "purple";
+        document.body.style.backgroundColor = "#BDEFFF";
     });
     alvaroImage.addEventListener("mouseleave", function() {
         texto3.style.display = "none";
-        document.body.style.backgroundColor = "yellow";
+        document.body.style.backgroundColor = "#FFFFFF";
     });
 
       
@@ -118,10 +118,10 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     ricardoImage.addEventListener("mouseenter", function() {
         texto4.style.display = "block";
-        document.body.style.backgroundColor = "orange";
+        document.body.style.backgroundColor = "#D8C5FF";
     });
     ricardoImage.addEventListener("mouseleave", function() {
         texto4.style.display = "none";
-        document.body.style.backgroundColor = "yellow";
+        document.body.style.backgroundColor = "#FFFFFF";
     });
 });

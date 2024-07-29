@@ -3,7 +3,7 @@ body {
   overflow: hidden;
   height: 100%;
   margin: 0;
-  background-color: yellow;
+  background-color: #ffffff;
 }
 
 .hidden {
@@ -114,6 +114,11 @@ body {
 }
 
 .texto4{
+  display: none;
+  z-index: 9;
+}
+
+.texto1{
   display: none;
   z-index: 9;
 }
@@ -317,7 +322,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  gap: 8vw;
+  gap: 10vw;
 
 }
 

@@ -12,13 +12,18 @@ body {
     margin: 0 auto;
     opacity: 60%;
 }
-
-.texto2, .texto3, .texto4, .texto5, .texto6 {
+ .texto3, .texto4, .texto5, .texto6 {
     text-align: center;
     left: 29vw;
     font-size: 2vw;
     display: none;
 }
+.texto2 {
+    text-align: center;
+    left: 29vw;
+    font-size: 2vw;
+}
+
 
 .container-2 {
     position: absolute;
