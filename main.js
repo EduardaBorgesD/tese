@@ -1,11 +1,11 @@
 document.addEventListener('DOMContentLoaded', function() {
     const headContainers = document.querySelectorAll('.head-container');
-    const imgContainers = document.querySelectorAll('.img_container');
+
 
     function rotateHeads(event) {
         const mouseX = event.clientX;
         const windowCenterX = window.innerWidth / 2;
-        const maxRotation = 10; 
+        const maxRotation = 3; 
         const rotation = (mouseX - windowCenterX) / windowCenterX * maxRotation;
 
         headContainers.forEach(headContainer => {
@@ -47,25 +47,81 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    function handleMouseOver(container) {
-        const texto1 = container.querySelector('.texto1');
-        if (texto1) {
-            texto1.style.display = 'block';
-        }
-    }
-
-    function handleMouseOut(container) {
-        const texto1 = container.querySelector('.texto1');
-        if (texto1) {
-            texto1.style.display = 'none';
-        }
-    }
-
-    imgContainers.forEach(container => {
-        container.addEventListener('mouseover', () => handleMouseOver(container));
-        container.addEventListener('mouseout', () => handleMouseOut(container));
-    });
-
     window.addEventListener('mousemove', rotateHeads);
     window.addEventListener('mousemove', eyeball);
+
+    var fernandoImage = document.getElementById("fernando-img");
+    var texto1 = document.querySelector(".texto1");
+    var albertoImage = document.getElementById("alberto-img");
+    var texto2 = document.querySelector(".texto2");
+    var alvaroImage = document.getElementById("alvaro-img");
+    var texto3 = document.querySelector(".texto3");
+    var ricardoImage = document.getElementById("ricardo-img");
+    var texto4 = document.querySelector(".texto4");
+    
+    function addDropAnimation() {
+        texto1.classList.add("drop");
+        texto2.classList.add("drop");
+        texto3.classList.add("drop");
+        texto4.classList.add("drop");
+    }
+
+    function removeDropAnimation() {
+        texto1.classList.remove("drop");
+        texto2.classList.remove("drop");
+        texto3.classList.remove("drop");
+        texto4.classList.remove("drop");
+    }
+    
+    fernandoImage.addEventListener("click", function() {
+        window.location.href = "index2.html";
+    });
+    fernandoImage.addEventListener("mouseenter", function() {
+        texto1.style.display = "block";
+        document.body.style.backgroundColor = "blue";
+        setTimeout(addDropAnimation, 10);
+    });
+    fernandoImage.addEventListener("mouseleave", function() {
+        texto1.style.display = "none";
+        document.body.style.backgroundColor = "yellow";
+    });
+      
+
+    albertoImage.addEventListener("click", function() {
+        window.location.href = "index4.html";
+    });
+    albertoImage.addEventListener("mouseenter", function() {
+        texto2.style.display = "block";
+        document.body.style.backgroundColor = "green";
+    });
+    albertoImage.addEventListener("mouseleave", function() {
+    texto2.style.display = "none";
+    document.body.style.backgroundColor = "yellow";
+    });
+
+      
+    alvaroImage.addEventListener("click", function() {
+        window.location.href = "index3.html";
+    });
+    alvaroImage.addEventListener("mouseenter", function() {
+        texto3.style.display = "block";
+        document.body.style.backgroundColor = "purple";
+    });
+    alvaroImage.addEventListener("mouseleave", function() {
+        texto3.style.display = "none";
+        document.body.style.backgroundColor = "yellow";
+    });
+
+      
+    ricardoImage.addEventListener("click", function() {
+        window.location.href = "index1.html";
+    });
+    ricardoImage.addEventListener("mouseenter", function() {
+        texto4.style.display = "block";
+        document.body.style.backgroundColor = "orange";
+    });
+    ricardoImage.addEventListener("mouseleave", function() {
+        texto4.style.display = "none";
+        document.body.style.backgroundColor = "yellow";
+    });
 });

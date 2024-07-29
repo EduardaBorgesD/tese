@@ -13,14 +13,6 @@
 <body>
 
     <div class="texto">
-        <div class="nao-sei">
-            <span class="nao">NÃO</span>
-            <span class="sei">SEI</span>
-            <span class="quantas">QUANTAS</span>
-            <p></p>
-            <span class="almas">ALMAS</span>
-            <span class="tenho">TENHO</span>
-        </div>
         <div class="texto1" style="display: hidden;">
             <span class="fernando">FERNANDO</span>
             <span class="pessoa">PESSOA</span>
@@ -30,7 +22,7 @@
             <span class="caeiro">CAEIRO</span>
         </div>
         <div class="texto3">
-            <span class="alvaro">ALVARO</span>
+            <span class="alvaro">ÁLVARO</span>
             <span class="de">DE</span>
             <span class="campos">CAMPOS</span>
         </div>
@@ -38,51 +30,15 @@
             <span class="ricardo">RICARDO</span>
             <span class="reis">REIS</span>
         </div>
+        <div class="nao-sei">
+            <span class="nao">NÃO</span>
+            <span class="sei">SEI</span>
+            <span class="quantas">QUANTAS</span>
+            <p></p>
+            <span class="almas">ALMAS</span>
+            <span class="tenho">TENHO</span>
+        </div> 
     </div>
-    <div class="main-container">
-        <div class="row-wrapper">
-            <div class="row">
-                <div class="img_container img_fernando">
-                    <img src="images/Fernandobody.png" class="body" alt="Fernando Pessoa">
-                    <div class="head-container">
-                        <img src="images/fernandohead.png" class="head" alt="Fernando Pessoa">
-                        <img class="eye" src="images/eyeFernando.PNG" alt="Fernando Pessoa's Eye" style="top:17vw; left:5.8vw">
-                        <img class="eye" src="images/eyeFernando.PNG" alt="Fernando Pessoa's Eye" style="top:17vw; left:10.8vw">
-                    </div>
-                </div>
-    
-                <div class="img_container img_alberto">
-                    <img src="images/Albertobody.PNG" class="body" alt="Alberto Caeiro">
-                    <div class="head-container">
-                        <img src="images/headAlberto.PNG" class="head" alt="Alberto Caeiro">
-                        <img class="eye" src="images/eyeAlberto.PNG" alt="Alberto Caeiro's Eye" style="top:17vw;left: 7.8vw;">
-                        <img class="eye" src="images/eyeAlberto.PNG" alt="Alberto Caeiro's Eye" style="top:17vw; left:11.5vw">
-                    </div>
-                </div>
-    
-                <div class="img_container img_alvaro">
-                    <img src="images/Alvarobody.PNG" class="body" alt="Alvaro de Campos">
-                    <div class="head-container">
-                        <img src="images/headAlvaro.PNG" class="head" alt="Alvaro de Campos">
-                        <img class="eye" src="images/eyeAlvaro.PNG" alt="Alvaro de Campos's Eye" style="top:19.5vw; left:6.5vw">
-                        <img class="eye" src="images/eyeAlvaro.PNG" alt="Alvaro de Campos's Eye" style="top:19vw; left:10vw">
-                        <img src="images/MonoculoAlvaro.PNG" class="monoculo" alt="Alvaro de Campos's Monocle">
-                    </div>
-                </div>
-    
-                <div class="img_container img_ricardo">
-                    <img src="images/Ricardobody.PNG" class="body" alt="Ricardo Reis">
-                    <div class="head-container">
-                        <img class="eye" src="images/eyeRicardo.PNG" alt="Ricardo Reis's Eye" style="top:17.8vw; left:5.5vw">
-                        <img class="eye" src="images/eyeRicardo.PNG" alt="Ricardo Reis's Eye" style="top:17.8vw; left:8.5vw">
-                        <img src="images/headRicardo.PNG" class="head" alt="Ricardo Reis">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-
     <nav>
         <div class="navbar">
           <div class="container nav-container">
@@ -99,6 +55,51 @@
           </div>
         </div>
       </nav>
+    <div class="main-container">
+        <div class="row-wrapper">
+            <div class="row">
+                <div class="img_container img_fernando clickable" id="fernando-img">
+                    <img src="images/Fernandobody.png" class="body" alt="Fernando Pessoa">
+                    <div class="head-container">
+                        <img src="images/fernandohead.png" class="head" alt="Fernando Pessoa">
+                        <img class="eye" src="images/eyeFernando.PNG" style="top:11vw; left:3.8vw">
+                        <img class="eye" src="images/eyeFernando.PNG" style="top:11vw; left:8.4vw">
+                    </div>
+                </div>
+    
+                <div class="img_container img_alberto clickable" id="alberto-img">
+                    <img src="images/Albertobody.PNG" class="body" alt="Alberto Caeiro">
+                    <div class="head-container">
+                        <img src="images/headAlberto.PNG" class="head" alt="Alberto Caeiro">
+                        <img class="eye" src="images/eyeAlberto.PNG" style="top:9.1vw;left: 3vw;">
+                        <img class="eye" src="images/eyeAlberto.PNG" style="top:9.1vw; left:6.5vw">
+                    </div>
+                </div>
+    
+                <div class="img_container img_alvaro clickable" id="alvaro-img">
+                    <img src="images/Alvarobody.PNG" class="body" alt="Alvaro de Campos">
+                    <div class="head-container">
+                        <img src="images/headAlvaro.PNG" class="head" alt="Alvaro de Campos">
+                        <img class="eye" src="images/eyeAlvaro.PNG" style="top:13.2vw; left:3.5vw">
+                        <img class="eye" src="images/eyeAlvaro.PNG" style="top:13vw; left:7vw">
+                    </div>
+                    <img src="images/MonoculoAlvaro.PNG" id="monoculo" alt="Monóculo">
+                </div>
+    
+                <div class="img_container img_ricardo clickable" id="ricardo-img">
+                    <img src="images/Ricardobody.PNG" class="body" alt="Ricardo Reis">
+                    <div class="head-container">
+                        <img class="eye" src="images/eyeRicardo.PNG" style="top:9.2vw; left:3vw">
+                        <img class="eye" src="images/eyeRicardo.PNG" style="top:9.2vw; left:6vw">
+                        <img src="images/headRicardo.PNG" class="head" alt="Ricardo Reis">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+   
     <script src="main.js"></script>
 </body>
 </html>

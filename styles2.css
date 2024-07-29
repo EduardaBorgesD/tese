@@ -1,54 +1,30 @@
 body {
     font-family: 'Rammetto One', sans-serif;
     overflow: hidden;
-  }
+}
 
-.rascunho{
+.rascunho {
     width: 100vw;
     height: auto;
-    top:0vw;
+    top: 0vw;
     display: block;
     position: absolute;
     margin: 0 auto;
     opacity: 60%;
-    pointer-events: none;
 }
 
-.texto2{
-    text-align: center;
-    left: 29vw;
-    font-size: 2vw;
-}
-
-.texto3{
+.texto2, .texto3, .texto4, .texto5, .texto6 {
     text-align: center;
     left: 29vw;
     font-size: 2vw;
     display: none;
 }
 
-.texto4{
-    text-align: center;
-    left: 29vw;
-    font-size: 2vw;
-    display: none;
+.container-2 {
+    position: absolute;
+    left: 40vw;
+    top: 23vw;
 }
-
-.texto5{
-    text-align: center;
-    left: 29vw;
-    font-size: 2vw;
-    display: none;
-}
-
-.texto6{
-    text-align: center;
-    left: 29vw;
-    font-size: 2vw;
-    display: none;
-}
-
-
 
 #lottie1{
     width: 12.5vw;
