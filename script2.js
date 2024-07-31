@@ -5,7 +5,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const texto4 = document.querySelector('.texto4');
     const texto5 = document.querySelector('.texto5');
     const texto6 = document.querySelector('.texto6');
-
+    const loader = document.getElementById('preloader');
+    window.addEventListener('load', function() {
+        loader.style.display = 'none';
+    });
   
 
     let selectionBox = null;

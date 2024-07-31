@@ -1,4 +1,8 @@
+html {
+  height: 100vh;
+}
 body {
+  height: calc(5vh * 3192);
   margin: 0;
   padding: 0;
 }
@@ -11,14 +15,16 @@ body {
 
 #set-height {
   display: block;
-  height: 100%; 
+  height: 100%;
 }
 
-#v0 {
-  width: 104%;
+canvas {
   position: fixed;
-  top:0%;
-  left: -2%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 100vw;
+  max-height: 100vh;
 }
 
 .navigator {
@@ -26,6 +32,7 @@ body {
   top: 20px;
   left: 20px;
 }
+
 #preloader{
   background: #000 url(images/preloader.gif) no-repeat center center;
   height: 100vh;

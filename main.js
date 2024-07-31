@@ -55,38 +55,38 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('mousemove', eyeball);
 
     var fernandoImage = document.getElementById("fernando-img");
-    var texto1 = document.querySelector(".texto1");
+    var text1 = document.querySelector(".text1");
     var albertoImage = document.getElementById("alberto-img");
-    var texto2 = document.querySelector(".texto2");
+    var text2 = document.querySelector(".text2");
     var alvaroImage = document.getElementById("alvaro-img");
-    var texto3 = document.querySelector(".texto3");
+    var text3 = document.querySelector(".text3");
     var ricardoImage = document.getElementById("ricardo-img");
-    var texto4 = document.querySelector(".texto4");
+    var text4 = document.querySelector(".text4");
     
     function addDropAnimation() {
-        texto1.classList.add("drop");
-        texto2.classList.add("drop");
-        texto3.classList.add("drop");
-        texto4.classList.add("drop");
+        text1.classList.add("drop");
+        text2.classList.add("drop");
+        text3.classList.add("drop");
+        text4.classList.add("drop");
     }
 
     function removeDropAnimation() {
-        texto1.classList.remove("drop");
-        texto2.classList.remove("drop");
-        texto3.classList.remove("drop");
-        texto4.classList.remove("drop");
+        text1.classList.remove("drop");
+        text2.classList.remove("drop");
+        text3.classList.remove("drop");
+        text4.classList.remove("drop");
     }
     
     fernandoImage.addEventListener("click", function() {
         window.location.href = "index2.html";
     });
     fernandoImage.addEventListener("mouseenter", function() {
-        texto1.style.display = "block";
+        text1.style.display = "block";
         document.body.style.backgroundColor = "#FFF6A6";
         setTimeout(addDropAnimation, 10);
     });
     fernandoImage.addEventListener("mouseleave", function() {
-        texto1.style.display = "none";
+        text1.style.display = "none";
         document.body.style.backgroundColor = "#FFFFFF";
     });
       
@@ -95,11 +95,11 @@ document.addEventListener('DOMContentLoaded', function() {
         window.location.href = "index4.html";
     });
     albertoImage.addEventListener("mouseenter", function() {
-        texto2.style.display = "block";
+        text2.style.display = "block";
         document.body.style.backgroundColor = "#E6FDA5";
     });
     albertoImage.addEventListener("mouseleave", function() {
-    texto2.style.display = "none";
+    text2.style.display = "none";
     document.body.style.backgroundColor = "#FFFFFF";
     });
 
@@ -108,11 +108,11 @@ document.addEventListener('DOMContentLoaded', function() {
         window.location.href = "index3.html";
     });
     alvaroImage.addEventListener("mouseenter", function() {
-        texto3.style.display = "block";
+        text3.style.display = "block";
         document.body.style.backgroundColor = "#BDEFFF";
     });
     alvaroImage.addEventListener("mouseleave", function() {
-        texto3.style.display = "none";
+        text3.style.display = "none";
         document.body.style.backgroundColor = "#FFFFFF";
     });
 
@@ -121,11 +121,11 @@ document.addEventListener('DOMContentLoaded', function() {
         window.location.href = "index1.html";
     });
     ricardoImage.addEventListener("mouseenter", function() {
-        texto4.style.display = "block";
+        text4.style.display = "block";
         document.body.style.backgroundColor = "#D8C5FF";
     });
     ricardoImage.addEventListener("mouseleave", function() {
-        texto4.style.display = "none";
+        text4.style.display = "none";
         document.body.style.backgroundColor = "#FFFFFF";
     });
 });
