@@ -1,6 +1,10 @@
 document.addEventListener('DOMContentLoaded', function() {
     const headContainers = document.querySelectorAll('.head-container');
 
+    var loader = document.getElementById("preloader");
+    window.addEventListener("load", function(){
+            loader.style.display="none";
+    })
 
     function rotateHeads(event) {
         const mouseX = event.clientX;

@@ -7,6 +7,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const minSpacing = 20; 
     const Interval = 3500;
 
+    var loader = document.getElementById("preloader");
+    window.addEventListener("load", function(){
+            loader.style.display="none";
+    })
+    
     setTimeout(() => {
         gamedisplay.style.display = 'block';
         initializeSheep();

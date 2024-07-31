@@ -5,22 +5,88 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ricardo Reis</title>
     <link rel="stylesheet" href="styles1.css">
-</head>
+    </head>
 <body>
-
+    <div id="preloader"></div>
     <div class="scroll-container">
         <div id="set-height"></div>
-            <video id="v0" tabindex="0" autobuffer preload>
-                <source type='video/mp4;codecs="avc1.42E01E, mp4a.40.2"' src="images/video1.MP4">
-            </video>
+        <video id="v0" tabindex="0" autobuffer preload playsinline>
+            <source type='video/mp4;codecs="avc1.42E01E, mp4a.40.2"' src="images/video1.MP4">
+        </video>
     </div>
 
     <a href="index.html" class="navigator">
-        <button>
-            Voltar Para Principal
-        </button>
+        <button>Voltar Para Principal</button>
     </a>
 
-    <script src="script1.js"></script>
+    <button id="Top" title="Back to Top">&#8679;</button>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const vid = document.getElementById('v0');
+            const playbackConst = 65;
+            const setHeight = document.getElementById('set-height');
+            const loader = document.getElementById('preloader');
+            let totalFrames = 0;
+            let framesPerPixel = 0;
+
+            window.addEventListener('load', function() {
+                loader.style.display = 'none';
+            });
+
+            vid.addEventListener('loadedmetadata', function() {
+                const frameRate = 24;
+                const duration = vid.duration;
+                totalFrames = Math.floor(frameRate * duration);
+
+                setHeight.style.height = (totalFrames * playbackConst) + 'px';
+
+                framesPerPixel = totalFrames / (document.documentElement.scrollHeight - window.innerHeight);
+            });
+
+            function updateVideo() {
+                const scrollPosition = window.scrollY || document.documentElement.scrollTop || document.body.scrollTop;
+                const frameNumber = Math.floor(scrollPosition * framesPerPixel);
+
+                if (frameNumber >= 0 && frameNumber < totalFrames) {
+                    vid.currentTime = (frameNumber / totalFrames) * vid.duration;
+                }
+            }
+
+            let Updating = false;
+            function onScroll() {
+                if (!Updating) {
+                    requestAnimationFrame(() => {
+                        updateVideo();
+                        Updating = false;
+                    });
+                    Updating = true;
+                }
+            }
+            let debounceTimer;
+            window.addEventListener('scroll', () => {
+                clearTimeout(debounceTimer);
+                debounceTimer = setTimeout(onScroll, 16); // 16ms for ~60fps
+            });
+
+            const TopButton = document.getElementById('Top');
+            TopButton.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 300) {
+                    TopButton.style.opacity = '1';
+                    TopButton.style.transform = 'translateY(0)';
+                } else {
+                    TopButton.style.opacity = '0';
+                    TopButton.style.transform = 'translateY(20px)';
+                }
+            });
+        });
+    </script>
 </body>
 </html>

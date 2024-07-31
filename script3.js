@@ -1,6 +1,11 @@
 var pressStartTime = null;
 var pressTimeout = null;
 
+var loader = document.getElementById("preloader");
+window.addEventListener("load", function(){
+        loader.style.display="none";
+})
+
 document.addEventListener('keydown', function(event) {
     if (event.code === 'Space') {
         if (pressStartTime === null) {

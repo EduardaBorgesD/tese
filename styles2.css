@@ -1,16 +1,17 @@
 body {
     font-family: 'Rammetto One', sans-serif;
-    overflow: hidden;
 }
 
 .rascunho {
     width: 100vw;
     height: auto;
     top: 0vw;
-    display: block;
+    left: -1vw;
+    display: none;
     position: absolute;
     margin: 0 auto;
     opacity: 60%;
+
 }
  .texto3, .texto4, .texto5, .texto6 {
     text-align: center;
@@ -158,3 +159,26 @@ body {
     top: 29.25vw;
     left: 10.68vw;
 }
+
+#selection-rect {
+    position: absolute;
+    border: 2px dashed #000;
+    background: rgba(0, 0, 255, 0.1);
+    display: none; /* Hidden initially */
+    pointer-events: none; /* Allow clicks to pass through */
+}
+
+.container-lottie {
+    position: relative; /* Ensures positioned children are relative to this container */
+    width: 95%; /* Adjust width and height as needed */
+    height: 100vh; /* Example height, adjust as needed */
+    overflow: hidden; /* Prevents overflow if needed */
+    border: 1px solid #000; /* Optional: Visual boundary for testing */
+}
+#preloader{
+    background: #000 url(images/preloader.gif) no-repeat center center;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+  }
