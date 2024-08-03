@@ -1,90 +1,72 @@
-body {
-    font-family: Arial, sans-serif;
-    overflow: hidden;
-    background-image: url("images/fundo-escuro.PNG");
-}
-
-.sheep {
-    position: absolute;
-    cursor: pointer;
-    transform: scale(0.1);
-    z-index: 3;
-}
-
-.initial-video {
-    width: 90vw;
-    height: auto;
-    align-items: center;
-    position: absolute;
-    top: 5vw;
-}
-
-.i_sheep.animate-sheep {
-    animation: ani-sheep1 2s infinite alternate; 
-}
-
-@keyframes ani-sheep1 {
-    0% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(20vw);
-    }
-    100%{
-        transform:translateY(-20vw);
-    }
-}
-
-
-.container-sheep {
-    text-align: center;
-    position: absolute;
-    overflow: hidden;
-    width: 100vw;
-    height: 100vh; 
-    transition: 4s ease; 
-    z-index: 2;
-}
-
-.pc_alberto {
-    width: 20vw;
-    height: 40vw; 
-    background-color: blue;
-    position: absolute;
-}
-
-.place_alberto {
+body, html {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh; 
-    margin: 2vw; 
-    opacity: 0%;
 }
 
-.background{
+#background {
+    position: absolute;
     width: 100vw;
-    height: auto;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     z-index: 1;
 }
 
-.video1{
-    width: 100vw;
-    height: auto;
+#background-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: -3vw;
+    left: 0;
+    z-index: 2;
 }
 
-.video{
-    z-index: 4;
-}
-
-.navigator{
-    z-index: 5;
-}
-
-#preloader{
+#preloader {
     background: #000 url(images/preloader.gif) no-repeat center center;
     height: 100vh;
     width: 100%;
     position: fixed;
     z-index: 100;
-  }
+    display: none;
+}
+
+.gif {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    cursor: pointer;
+    z-index: 10;
+    position: absolute;
+}
+
+.gif1 {
+    top: 58vw;
+    left: 10px;
+}
+
+.gif2 {
+    top:58vw;
+    left: 120px;
+}
+
+.gif-tree {
+    position: absolute;
+    left: 61.2vw;
+    top: -2.2vw;
+    width: 40vw;
+    z-index: 200;
+}
+
+.navigator{
+    z-index: 500;
+    position: absolute;
+    top: 0vw;
+    left: 0vw;
+}

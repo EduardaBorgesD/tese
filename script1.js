@@ -2,10 +2,12 @@
         const html = document.documentElement;
         const canvas = document.querySelector("canvas");
         const context = canvas.getContext("2d");
+
         const loader = document.getElementById('preloader');
         window.addEventListener('load', function() {
             loader.style.display = 'none';
         });
+        
         var playbackConst = 1500;
         const frameCount = 3192;
         const currentFrame = (index) =>

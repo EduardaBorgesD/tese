@@ -13,13 +13,30 @@
         <button class="navigator">Voltar Para Principal</button>
     </a>
 
+    <audio id="background-audio" autoplay>
+        <source src="sounds/vento.wav" type="audio/wav">
+        Your browser does not support the audio element.
+    </audio>
 
-    <div class="video">
-        <video class="video1" src="images/alberto1.MP4" style="display: none;"></video>
-        <video class="video2" src="images/alberto2.MP4" style="display: none;"></video>
+    <audio id="gif1-audio">
+        <source src="sounds/REBANHOS.wav" type="audio/wav">
+        Your browser does not support the audio element.
+    </audio>
+
+    <audio id="gif2-audio">
+        <source src="sounds/TEJO.wav" type="audio/wav">
+        Your browser does not support the audio element.
+    </audio>
+
+
+    <div id="background">
+        <img src="images/bg_alberto.JPEG" id="background-img">
+        <img src="images/arvorealberto.gif" class="gif-tree">
+        <div id="gifs">
+            <img src="images/sheep.PNG" class="gif gif1" draggable="true" id="gif1" data-static="images/sheep.PNG" data-animated="images/sheep.GIF">
+            <img src="images/rio.PNG" class="gif gif2" draggable="true" id="gif2" data-static="images/rio.PNG" data-animated="images/rio.GIF">
+        </div>
     </div>
-
-    <div class="container-sheep" id="gamedisplay"></div>
-
+    <script src="script4.js"></script>
 </body>
 </html>

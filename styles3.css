@@ -23,29 +23,34 @@ body, html {
     width: 34vw;
     left: 34vw;
     top: 5vw;
+    cursor: pointer;
 }
 
 #candeeiro1 {
     width: 8vw;
     top: -7.5vw;
     left: 64.5vw;
+    cursor: pointer;
 }
 
 #candeeiro2 {
     width: 8vw;
     top: -7.5vw;
     left: 30vw;
+    cursor: pointer;
 }
 
 #cortina {
     width: 100vw;
     top: -6vw;
+    cursor: pointer;
 }
 
 #opio {
     width: 30vw;
     left: 36vw;
     top: 28vw;
+    cursor: pointer;
 }
 
 .navigator {
