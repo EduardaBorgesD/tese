@@ -10,132 +10,95 @@ body {
   display: none;
 }
 
-.nao{
-  font-size: 8.8vw;
-  line-height: 1vw;
-  left: 0vw;
+.nao, .sei, .quantas, .almas, .tenho {
   position: absolute;
-  top: 19.8vw;
 }
-.sei{
+
+.nao, .sei, .quantas {
   font-size: 8.8vw;
   line-height: 1vw;
-  left: 27.5vw;
-  position: absolute;
-  top: 19.8vw;
-}
-.quantas{
-  font-size: 8.8vw;
-  line-height: 1vw;
-  left: 45.7vw;
-  position: absolute;
   top: 19.8vw;
 }
 
-.almas{
+.nao {
+  left: 0vw;
+}
+
+.sei {
+  left: 27.5vw;
+}
+
+.quantas {
+  left: 45.7vw;
+}
+
+.almas {
   font-size: 21.2vw;
   line-height: 1vw;
-  left: 0vw;
-  position: absolute;
-  top: 32.6vw;
+  top: 32.7vw;
   letter-spacing: 1vw;
+  left: 0vw;
 }
 
-.tenho{
+.tenho {
   font-size: 22.8vw;
   line-height: 1vw;
-  left: 0vw;
-  position: absolute;
-  letter-spacing: 1vw;
   top: 50vw;
+  letter-spacing: 1vw;
+  left: 0vw;
 }
 
+.fernando, .pessoa, .alberto, .caeiro, .alvaro, .de, .campos, .ricardo, .reis {
+  color: #292929;
+}
 
-.fernando{
+.fernando, .pessoa {
   font-size: 8.2vw;
   position: absolute;
   top: 6.6vw;
-  color: #292929;
 }
-.pessoa{
-  font-size: 8.2vw;
-  position: absolute;
+
+.pessoa {
   left: 59vw;
-  top: 6.6vw;
-  color: #292929;
 }
 
-.text2{
-  display: none;
-  z-index: 9;
-}
-
-.alberto{
+.alberto, .caeiro {
   font-size: 9vw;
   position: absolute;
   top: 5.7vw;
-  color: #292929;
 }
 
-.caeiro{
-  font-size: 9vw;
-  position: absolute;
+.caeiro {
   left: 56vw;
-  top: 5.7vw;
-  color: #292929;
 }
 
-.text3{
-  display: none;
-  z-index: 9;
-}
-
-.alvaro{
+.alvaro, .de, .campos {
   font-size: 7.9vw;
   position: absolute;
   top: 6.9vw;
-  color: #292929;
 }
 
-.de{
-  font-size: 7.9vw;
-  position: absolute;
+.de {
   left: 42vw;
-  top: 6.9vw;
-  color: #292929;
 }
 
-.campos{
-  font-size: 7.9vw;
-  position: absolute;
+.campos {
   left: 57vw;
-  top: 6.9vw;
-  color: #292929;
 }
 
-.text4{
-  display: none;
-  z-index: 9;
-}
-
-.text1{
-  display: none;
-  z-index: 9;
-}
-
-.ricardo{
+.ricardo, .reis {
   font-size: 11vw;
   position: absolute;
   top: 3.3vw;
-  color: #292929;
 }
 
-.reis{
-  font-size: 11vw;
-  position: absolute;
+.reis {
   left: 69vw;
-  top: 3.3vw;
-  color: #292929;
+}
+
+.text1, .text2, .text3, .text4 {
+  display: none;
+  z-index: 9;
 }
 
 .head {
@@ -168,7 +131,7 @@ body {
   z-index: 10;
 }
 
-.drop{
+.drop {
   animation: drop 0.5s linear forwards;
 }
 
@@ -265,14 +228,20 @@ body {
   transition: transform 0.4s ease-in-out;
 }
 
+
 .navbar .menu-items {
-  padding-top: 120px;
+  padding-top: 10vw;
   height: 100vh;
-  width: 100%;
-  transform: translateX(150%);
+  width: 16vw;
+  transform: translateX(100%);
   display: flex;
   flex-direction: column;
-  padding-right: 50px;
+  padding-right: 0vw;
+  position: fixed;
+  right: 0; 
+  top: 0; 
+  background: #fff;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
   transition: transform 0.5s ease-in-out;
   text-align: center;
 }
@@ -281,6 +250,26 @@ body {
   margin-bottom: 1.2rem;
   font-size: 1.5rem;
   font-weight: 500;
+  text-align: right;
+  padding-right: 3vw;
+}
+
+.main-container {
+  width: calc(100% - 250px);
+  transition: width 0.5s ease-in-out;
+}
+
+.main-container.menu-open {
+  width: calc(100% - 30vw);
+}
+
+.menu-open1 {
+  transform: translateX(16vw);
+}
+
+.nao-sei {
+  width: calc(100% - 250px);
+  transition: width 0.5s ease-in-out;
 }
 
 .nav-container input[type="checkbox"]:checked ~ .menu-items {
@@ -299,9 +288,6 @@ body {
   transform: rotate(45deg);
 }
 
-.nav-container input[type="checkbox"]:checked ~ .logo {
-  display: none;
-}
 
 .main-container {
   width: 100%;
@@ -323,7 +309,6 @@ body {
   justify-content: center;
   align-items: flex-start;
   gap: 10vw;
-
 }
 
 .img_container {
@@ -333,40 +318,46 @@ body {
   align-items: center;
 }
 
-
 .img_fernando .body,
-.img_fernando .head  {
+.img_fernando .head {
   width: 15.5vw;
 }
 
 .img_ricardo .body,
-.img_ricardo .head{
+.img_ricardo .head {
   width: 13vw;
 }
-
 
 .img_alberto .body,
 .img_alberto .head {
   width: 13vw;
 }
-.img_alberto .head-container,.img_ricardo .head-container{
+
+.img_alberto .head-container,
+.img_ricardo .head-container {
   position: absolute;
   top: -23.7vw;
 }
 
-.img_fernando .head-container{
+.img_fernando .head-container {
   position: absolute;
-  top:-26.1vw;
+  top: -26.1vw;
 }
 
 .img_alvaro .body,
-.img_alvaro .head{
+.img_alvaro .head {
   width: 15vw;
 }
-#alvaro-img, #alberto-img, #ricardo-img, #fernando-img{
-  top:40vw;
+
+#alvaro-img,
+#alberto-img,
+#ricardo-img,
+#fernando-img {
+  top: 40vw;
+  position: relative;
 }
-.img_alvaro .head-container{
+
+.img_alvaro .head-container {
   position: absolute;
   top: -25.6vw;
 }
@@ -378,15 +369,16 @@ body {
   left: -1.5vw;
 }
 
-.img_fernando .eye{
+.img_fernando .eye {
   position: absolute;
   width: 5vw;
 }
 
-.img_alberto .eye{
+.img_alberto .eye {
   position: absolute;
   width: 4vw;
 }
+
 .img_alvaro .eye,
 .img_ricardo .eye {
   position: absolute;
@@ -397,10 +389,53 @@ body {
   cursor: pointer;
 }
 
-#preloader{
+#preloader {
   background: #000 url(images/preloader.gif) no-repeat center center;
   height: 100vh;
   width: 100%;
   position: fixed;
   z-index: 100;
+}
+
+@media screen and (max-width: 1024px) {
+  .nao, .sei, .quantas, .almas, .tenho {
+    -webkit-text-stroke: 2px #292929;
+  }
+
+
+  .img_fernando .eye,
+  .img_alberto .eye,
+  .img_alvaro .eye,
+  .img_ricardo .eye {
+    width: 4vw;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .nao, .sei, .quantas, .almas, .tenho {
+    -webkit-text-stroke: 2px #292929;
+  }
+
+
+  .img_fernando .eye,
+  .img_alberto .eye,
+  .img_alvaro .eye,
+  .img_ricardo .eye {
+    width: 4vw;
+  }
+
+
+@media screen and (max-width: 480px) {
+  .nao, .sei, .quantas, .almas, .tenho {
+    -webkit-text-stroke: 2px #292929;
+  }
+
+
+  .img_fernando .eye,
+  .img_alberto .eye,
+  .img_alvaro .eye,
+  .img_ricardo .eye {
+    width: 4vw;
+  }
+}
 }

@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var loader = document.getElementById("preloader");
     window.addEventListener("load", function(){
             loader.style.display="none";
-    })
+    });
 
     function rotateHeads(event) {
         const mouseX = event.clientX;
@@ -127,5 +127,41 @@ document.addEventListener('DOMContentLoaded', function() {
     ricardoImage.addEventListener("mouseleave", function() {
         text4.style.display = "none";
         document.body.style.backgroundColor = "#FFFFFF";
+    });
+
+    const naoSei = document.querySelector('.nao-sei');
+    const personagens = [fernandoImage, albertoImage, alvaroImage, ricardoImage];
+
+    naoSei.style.display = 'block';
+    personagens.forEach(img => img.style.display = 'none');
+
+
+    setTimeout(() => {
+        personagens[0].style.display = 'block';
+        setTimeout(() => {
+            personagens[1].style.display = 'block';
+            setTimeout(() => {
+                personagens[2].style.display = 'block';
+                setTimeout(() => {
+                    personagens[3].style.display = 'block';
+                }, 500);
+            }, 500);
+        }, 500);
+    }, 2000);
+
+    const checkbox = document.querySelector('.checkbox');
+    const menuItems = document.querySelector('.menu-items');
+    const mainContainer = document.querySelector('.main-container');
+    const text = document.querySelector('.nao-sei');
+
+    checkbox.addEventListener('change', function() {
+        if (this.checked) {
+            menuItems.style.transform = 'translateX(0)';
+            mainContainer.classList.add('menu-open');
+            text.classList.add('menu-open1');
+        } else {
+            menuItems.style.transform = 'translateX(100%)';
+            mainContainer.classList.remove('menu-open');
+        }
     });
 });

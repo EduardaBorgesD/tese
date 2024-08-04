@@ -112,8 +112,8 @@ text-decoration: none;
 
 .estatico1 {
     position: absolute;
-    width: 12vw;
-    top: 4.8vw;
+    width: 12.6vw;
+    top: 4.7vw;
     left: 13vw;
 }
 
@@ -181,10 +181,11 @@ text-decoration: none;
 }
 
 .estatico11 {
-    width: 10.4vw;
+    width: 10.9vw;
     position: absolute;
-    top: 16.68vw;
-    left: 48vw;
+    top: 16.1vw;
+    left: 47.35vw;
+    z-index: 2;
 }
 
 .estatico12 {
@@ -306,9 +307,31 @@ text-decoration: none;
     left: 23vw;
 }
 
-.estatico29{
-    width: 10vw;
+.estatico29 {
+    width: 12.25vw;
     position: absolute;
-    top: 2vw;
-    left: 10vw;
+    top: 34.4vw;
+    left: 40.15vw;
 }
+
+.estatico30 {
+    width: 11.5vw;
+    position: absolute;
+    top: 2.78vw;
+    left: 24.7vw;
+}
+
+.estatico31 {
+    width: 18.65vw;
+    position: absolute;
+    top: 2.35vw;
+    left: 35.7vw;
+}
+
+.estatico32{
+        width: 17.8vw;
+        position: absolute;
+        top: 24.0vw;
+        left: 52.45vw;
+        z-index: 1;
+    }
