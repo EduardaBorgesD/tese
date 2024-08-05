@@ -1,15 +1,15 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const players = document.querySelectorAll('.lottie-player');
+    const lottiePlayers = document.querySelectorAll('.lottie1, .lottie2, .lottie3, .lottie4, .lottie5, .lottie6, .lottie7, .lottie8, .lottie9, .lottie10, .lottie11, .lottie12, .lottie13, .lottie14, .lottie15, .lottie16, .lottie17, .lottie18, .lottie19, .lottie20, .lottie21, .lottie22, .lottie23, .lottie24, .lottie25, .lottie26, .lottie27, .lottie28, .lottie29');
     const texto2 = document.querySelector('.texto2');
     const texto3 = document.querySelector('.texto3');
     const texto4 = document.querySelector('.texto4');
     const texto5 = document.querySelector('.texto5');
     const texto6 = document.querySelector('.texto6');
     const loader = document.getElementById('preloader');
+
     window.addEventListener('load', function() {
         loader.style.display = 'none';
     });
-  
 
     let selectionBox = null;
 
@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const boxRect = selectionBox.getBoundingClientRect();
         let allLottieCovered = true;
 
-        players.forEach(player => {
+        lottiePlayers.forEach(player => {
             const playerRect = player.getBoundingClientRect();
             if (!(boxRect.left <= playerRect.right &&
                 boxRect.right >= playerRect.left &&
@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    players.forEach(player => {
+    lottiePlayers.forEach(player => {
         let isPlaying = false;
 
         player.addEventListener('mouseenter', () => {
@@ -96,39 +96,5 @@ document.addEventListener('DOMContentLoaded', () => {
             player.stop();
             isPlaying = false;
         });
-    });
-
-    const pessoa1 = document.getElementById('pessoa1');
-    const pessoa2 = document.getElementById('pessoa2');
-    const pessoa3 = document.getElementById('pessoa3');
-    const pessoa4 = document.getElementById('pessoa4');
-
-    pessoa1.addEventListener('mousedown', () => {
-        texto2.style.display = 'none';
-        texto4.style.display = 'none';
-        texto3.style.display = 'none';
-        texto5.style.display = 'none';
-        texto6.style.display = 'block';
-    });
-
-    pessoa2.addEventListener('mousedown', () => {
-        texto2.style.display = 'none';
-        texto4.style.display = 'block';
-        texto3.style.display = 'none';
-        texto5.style.display = 'none';
-    });
-
-    pessoa3.addEventListener('mousedown', () => {
-        texto2.style.display = 'none';
-        texto4.style.display = 'none';
-        texto5.style.display = 'none';
-        texto3.style.display = 'block';
-    });
-
-    pessoa4.addEventListener('mousedown', () => {
-        texto2.style.display = 'none';
-        texto5.style.display = 'block';
-        texto3.style.display = 'none';
-        texto4.style.display = 'none';
     });
 });

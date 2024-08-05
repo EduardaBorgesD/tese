@@ -56,14 +56,6 @@ body, html {
     left: 120px;
 }
 
-.gif-tree {
-    position: absolute;
-    left: 61.2vw;
-    top: -2.2vw;
-    width: 40vw;
-    z-index: 200;
-}
-
 .navigator{
     z-index: 500;
     position: absolute;
