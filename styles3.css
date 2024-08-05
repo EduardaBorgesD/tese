@@ -162,3 +162,47 @@ body, html {
     position: fixed;
     z-index: 100;
   }
+
+  .navigator {
+    z-index: 1000;
+    position: fixed;
+    border: none; 
+    background: none; 
+    cursor: pointer; 
+    left:5vw;
+    top: 3vw;
+  }
+  .navigator::before,
+  .navigator::after {
+    content: "";
+    display: block;
+    left: 0;
+    position: absolute;
+    top: 50%;
+    transition: left 0.1s;
+  }
+  .navigator::before {
+    border-color: #000;
+    border-style: solid;
+    border-width: 0 0 0.3em 0.3em; 
+    height: 1.5em;
+    margin-top: -0.75em;
+    width: 1.5em;
+    border-radius: 0.3em;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+  }
+  .navigator::after {
+    background: #000;
+    height: 0.3em;
+    width: 2em;
+    border-radius: 0.15em;
+  }
+  
+  .navigator:hover::before,
+  .navigator:hover::after {
+    left: -0.3em;
+  }
+  .a{
+  text-decoration: none;
+  }
