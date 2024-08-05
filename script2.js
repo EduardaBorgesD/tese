@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const lottiePlayers = document.querySelectorAll('.lottie1, .lottie2, .lottie3, .lottie4, .lottie5, .lottie6, .lottie7, .lottie8, .lottie9, .lottie10, .lottie11, .lottie12, .lottie13, .lottie14, .lottie15, .lottie16, .lottie17, .lottie18, .lottie19, .lottie20, .lottie21, .lottie22, .lottie23, .lottie24, .lottie25, .lottie26, .lottie27, .lottie28, .lottie29');
+    const lottiePlayers = document.querySelectorAll('.lottie1, .lottie2, .lottie3, .lottie4, .lottie5, .lottie6, .lottie7, .lottie8, .lottie9, .lottie10, .lottie11, .lottie12, .lottie13, .lottie14, .lottie15, .lottie16, .lottie17, .lottie18, .lottie19, .lottie20, .lottie21, .lottie22, .lottie23, .lottie24, .lottie25, .lottie26, .lottie27, .lottie28, .lottie29, .lottie30');
     const texto2 = document.querySelector('.texto2');
     const texto3 = document.querySelector('.texto3');
     const texto4 = document.querySelector('.texto4');

@@ -12,7 +12,7 @@ body {
     position: absolute;
     margin: 0 auto;
     opacity: 60%;
-
+    display: none;
 
 }
  .texto3, .texto4, .texto5, .texto6 {
@@ -107,12 +107,12 @@ text-decoration: none;
 
 .container-lottie-static{
     z-index: 80;
-    opacity: 70%;
+    opacity: 100%;
 }
 
 .container-lottie-animated{
     z-index: 80;
-    opacity: 70%;
+    opacity: 100%;
 }
 
 .estatico1 {
@@ -130,10 +130,10 @@ text-decoration: none;
 }
 
 .estatico3{
-    width: 13vw;
+    width: 13.3vw;
     position: absolute;
-    top: 6.6vw;
-    left: 23.6vw;
+    top: 6.5vw;
+    left: 23.5vw;
 }
 
 .estatico4 {
@@ -144,17 +144,17 @@ text-decoration: none;
 }
 
 .estatico5 {
-    width: 9.5vw;
+    width: 9.65vw;
     position: absolute;
-    top: 15.78vw;
-    left: 36.1vw;
+    top: 15.63vw;
+    left: 35.89vw;
 }
 
 .estatico6 {
     width: 13.9vw;
     position: absolute;
     top: 12.5vw;
-    left: 40.1vw;
+    left: 40.0vw;
 }
 
 .estatico7 {
@@ -194,10 +194,10 @@ text-decoration: none;
 }
 
 .estatico12 {
-    width: 5.65vw;
+    width: 6.38vw;
     position: absolute;
-    top: 21.7vw;
-    left: 66.58vw;
+    top: 21.3vw;
+    left: 65.85vw;
 }
 
 .estatico13 {
@@ -335,11 +335,11 @@ text-decoration: none;
 }
 
 .estatico32{
-        width: 17.8vw;
-        position: absolute;
-        top: 24.0vw;
-        left: 52.45vw;
-        z-index: 1;
+    width: 17.49vw;
+    position: absolute;
+    top: 24.2vw;
+    left: 52.15vw;
+    z-index: 1;
     }
 
     .estatico33 {
@@ -349,6 +349,14 @@ text-decoration: none;
         left: 12.45vw;
         z-index: 1;
     }
+
+    .estatico34{
+    width: 10vw;
+    position: absolute;
+    top: 31.2vw;
+    left: 83.15vw;
+    z-index: 1;
+        }
 
     .lottie1 {
         width: 10.5vw;
@@ -360,13 +368,13 @@ text-decoration: none;
     }
 
     .lottie2 {
-        width: 13.7vw;
-        position: absolute;
-        top: 18.3vw;
-        left: 20.85vw;
-        z-index: 1;
-        height: auto;
-    }
+        width: 13.9vw;
+    position: absolute;
+    top: 18.3vw;
+    left: 20.85vw;
+    z-index: 1;
+    height: auto;
+}
 
 .lottie3{
     width: 11.85vw;
@@ -390,7 +398,7 @@ text-decoration: none;
     width: 11.2vw;
     position: absolute;
     top: 29.4vw;
-    left: 45.9vw;
+    left: 45.8vw;
     z-index: 1;
     height: auto;
 }
@@ -441,11 +449,11 @@ text-decoration: none;
     height: auto;
 }
 
-.lottie11{
-    width: 12.27vw;
+.lottie11 {
+    width: 12.8vw;
     position: absolute;
-    top: 28.04vw;
-    left: 66.1vw;
+    top: 27.9vw;
+    left: 65.7vw;
     z-index: 1;
     height: auto;
 }
@@ -568,39 +576,56 @@ text-decoration: none;
     height: auto;
 }
 .lottie25{
-    width: 10vw;
+    width: 9.65vw;
     position: absolute;
-    top: 3vw;
-    left: 2vw;
-    z-index: 1;
+    top: 31.45vw;
+    left: 20.95vw;
+    z-index: 0;
+    height: auto;
 }
+
 .lottie26{
-    width: 10vw;
+    width: 15.5vw;
     position: absolute;
-    top: 3vw;
-    left: 2vw;
+    top: 17.5vw;
+    left: 74.2vw;
     z-index: 1;
+    height: auto;
 }
+
 .lottie27{
-    width: 10vw;
+    width: 17.2vw;
     position: absolute;
-    top: 3vw;
-    left: 2vw;
+    top: 38.23vw;
+    left: 62.7vw;
     z-index: 1;
+    height: auto;
 }
+
 .lottie28{
-    width: 10vw;
+    width: 13.9vw;
     position: absolute;
-    top: 3vw;
-    left: 2vw;
+    top: 23.77vw;
+    left: 31.89vw;
     z-index: 1;
+    height: auto;
 }
 .lottie29{
-    width: 10vw;
+    width: 10.91vw;
     position: absolute;
-    top: 3vw;
-    left: 2vw;
-    z-index: 1;
+    top: 24.79vw;
+    left: 42.81vw;
+    z-index: 2;
+    height: auto;
+}
+
+.lottie30{
+    width: 16.2vw;
+    position: absolute;
+    top: 34.7vw;
+    left: 6.18vw;
+    z-index: 2;
+    height: auto;
 }
 
 
