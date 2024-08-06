@@ -4,6 +4,10 @@ body {
 
 }
 
+.color-change {
+    opacity: 70%;
+}
+
 .rascunho {
     width: 92vw;
     height: auto;

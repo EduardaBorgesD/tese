@@ -97,4 +97,11 @@ document.addEventListener('DOMContentLoaded', () => {
             isPlaying = false;
         });
     });
+
+
+    lottiePlayers.forEach((player) => {
+        player.addEventListener('click', () => {
+            player.classList.toggle('color-change');
+        });
+    });
 });

@@ -1,80 +1,123 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const audioElement = document.getElementById('background-audio');
-    const gif1AudioElement = document.getElementById('gif1-audio');
-    const gif2AudioElement = document.getElementById('gif2-audio');
-    
-    const playAudio = () => {
-        audioElement.play().catch(() => {
-            console.log('Autoplay was prevented, waiting for user interaction');
+    const draggables = document.querySelectorAll('.draggable');
+    const background = document.getElementById('background-image');
+    const backgroundAudio = document.getElementById('background-audio');
+
+    if (backgroundAudio) {
+        backgroundAudio.loop = true;
+        backgroundAudio.volume = 0.2;
+        backgroundAudio.play();
+    }
+
+    let currentAudio = null;
+    const positionedGifs = new Set();
+
+    draggables.forEach(draggable => {
+        draggable.addEventListener('dragstart', (e) => {
+            e.dataTransfer.setData('text/plain', e.target.id);
         });
-    };
-    
-    playAudio();
-    
-    document.addEventListener('click', playAudio, { once: true });
-    document.addEventListener('scroll', playAudio, { once: true });
-    document.addEventListener('keydown', playAudio, { once: true });
-
-    const gifs = document.querySelectorAll('.gif');
-    const backgroundContainer = document.getElementById('background');
-    const gifContainer = document.getElementById('gifs');
-
-    const gifPositions = {
-        gif1: { left: '20px', top: '50px' },
-        gif2: { left: '150px', top: '100px' }
-    };
-
-    gifs.forEach(gif => {
-        gif.addEventListener('dragstart', handleDragStart);
     });
 
-    backgroundContainer.addEventListener('dragover', handleDragOver);
-    backgroundContainer.addEventListener('drop', handleDrop);
-    gifContainer.addEventListener('dragover', handleDragOver);
-    gifContainer.addEventListener('drop', handleReturnDrop);
+    background.addEventListener('dragover', (e) => {
+        e.preventDefault();
+    });
 
-    function handleDragStart(event) {
-        event.dataTransfer.setData('text/plain', event.target.id);
-    }
+    background.addEventListener('drop', (e) => {
+        e.preventDefault();
+        const id = e.dataTransfer.getData('text/plain');
+        const droppedImage = document.getElementById(id);
 
-    function handleDragOver(event) {
-        event.preventDefault();
-    }
-
-    function handleDrop(event) {
-        event.preventDefault();
-        const id = event.dataTransfer.getData('text');
-        const gif = document.getElementById(id);
-
-        gif.src = gif.getAttribute('data-animated');
-        gif.style.position = 'absolute';
-
-        if (gifPositions[id]) {
-            gif.style.left = gifPositions[id].left;
-            gif.style.top = gifPositions[id].top;
+        if (!droppedImage) {
+            return;
         }
 
-        backgroundContainer.appendChild(gif);
+        const rect = background.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
 
-        if (id === 'gif1') {
-            gif1AudioElement.play().catch(() => {
-                console.log('Failed to play GIF1 audio.');
-            });
-        } else if (id === 'gif2') {
-            gif2AudioElement.play().catch(() => {
-                console.log('Failed to play GIF2 audio.');
-            });
+        const gifMapping = {
+            'png1': 'floresG.gif',
+            'png2': 'rioG.gif',
+            'png3': 'sheepG.gif',
+            'png4': 'nuvem.gif',
+            'png5': 'aldeia.gif',
+            'png6': 'sol.gif'
+        };
+
+        const audioMapping = {
+            'floresG.gif': 'gif-flores-audio',
+            'rioG.gif': 'gif-rio-audio',
+            'sheepG.gif': 'gif-ovelha-audio',
+            'aldeia.gif': 'gif-lapide-audio',
+            'nuvem.gif': 'gif-nuvem-audio',
+            'sol.gif': 'gif-sol-audio'
+        };
+
+        const newGif = gifMapping[id];
+        if (newGif) {
+            if (positionedGifs.has(newGif)) {
+                if (newGif === 'rioG.gif') {
+                    droppedImage.style.left = '100px';
+                    droppedImage.style.top = '200px';
+                } else {
+                    droppedImage.style.left = `${x - (droppedImage.width / 2)}px`;
+                    droppedImage.style.top = `${y - (droppedImage.height / 2)}px`;
+                }
+                return;
+            }
+
+            droppedImage.src = `images/Alberto/${newGif}`;
+
+            if (currentAudio) {
+                currentAudio.pause();
+                currentAudio.currentTime = 0;
+            }
+
+            const newAudioId = audioMapping[newGif];
+            if (newAudioId) {
+                currentAudio = document.getElementById(newAudioId);
+                if (currentAudio) {
+                    currentAudio.load();
+                    currentAudio.play();
+                }
+            }
+
+            if (newGif === 'sheepG.gif') {
+                droppedImage.classList.add('sheep-gif');
+            } else if (newGif === 'floresG.gif'){
+                droppedImage.classList.add('flores-gif');
+            } else if (newGif === 'rioG.gif'){
+                droppedImage.classList.add('rio-gif');
+            } else if (newGif === 'nuvem.gif'){
+                droppedImage.classList.add('nuvem-gif');}else{
+                droppedImage.classList.add('draggable1');
+            }
+
+            droppedImage.style.position = 'absolute';
+            if (newGif === 'rioG.gif') {
+                droppedImage.style.left = '42vw';
+                droppedImage.style.top = '8.7vw';
+            } else if (newGif === 'nuvem.gif') {
+                    droppedImage.style.left = '0vw';
+                    droppedImage.style.top = '-2vw';
+                    droppedImage.style.position = 'fixed';
+                    droppedImage.draggable = false;
+            }
+
+                else if (newGif === 'sol.gif'){
+                droppedImage.style.left = `${x - (droppedImage.width / 2)}px`;
+                const sky = Math.max(0, Math.min(10, y - (droppedImage.height / 2) * 100 / window.innerHeight)) + 'vw';
+                droppedImage.style.top = sky;
+            } else {
+                droppedImage.style.left = `${x - (droppedImage.width / 2)}px`;
+                droppedImage.style.top = `${y - (droppedImage.height / 2)}px`;
+            }
+
+            positionedGifs.add(newGif);
+
+            droppedImage.parentNode.removeChild(droppedImage);
+            
+            background.appendChild(droppedImage);
         }
-    }
-
-    function handleReturnDrop(event) {
-        event.preventDefault();
-        const id = event.dataTransfer.getData('text');
-        const gif = document.getElementById(id);
-
-        gif.src = gif.getAttribute('data-static');
-        gif.style.position = 'absolute';
-
-        gifContainer.appendChild(gif);
-    }
+    });
 });
