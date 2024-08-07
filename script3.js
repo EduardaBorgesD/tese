@@ -50,11 +50,6 @@ function showRandomSvg() {
     document.getElementById('fumo-container').appendChild(newSvg);
 }
 
-document.addEventListener('DOMContentLoaded', function() {
-    var tamVW = Math.random() * 25;
-    document.documentElement.style.setProperty('--tam-vw', tamVW + 'vw');
-});
-
 document.querySelectorAll('.element2').forEach(img => {
     img.addEventListener('click', () => {
         img.style.filter = `hue-rotate(${Math.random() * 360}deg)`;
@@ -75,13 +70,4 @@ document.querySelectorAll('.element2').forEach(img => {
         });
     });
 
-    document.addEventListener('mousemove', function(event) {
-        const x = event.clientX;
-        const y = event.clientY;
 
-        const angleDeg = (x + y) % 360;
-        const elements = document.querySelectorAll('.element1');
-        elements.forEach(element => {
-            element.style.filter = `hue-rotate(${angleDeg}deg)`;
-        });
-    });

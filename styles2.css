@@ -5,7 +5,7 @@ body {
 }
 
 .color-change {
-    opacity: 70%;
+    opacity: 100%;
 }
 
 .rascunho {
@@ -19,6 +19,7 @@ body {
     display: none;
 
 }
+
  .texto3, .texto4, .texto5, .texto6 {
     text-align: center;
     left: 29vw;
@@ -27,11 +28,30 @@ body {
     top: 10vw;
     position: absolute;
 }
+
+.container-1{
+    justify-content: center;
+    position: relative;
+}
+
 .texto2 {
     text-align: center;
-    left: 15vw;
     font-size: 1.5vw;
-    top: 20vw;
+    position: absolute;
+    left: 50%;
+    top:53vw;
+    transform: translate(-50%, -50%);
+}
+
+.text-display {
+    text-align: center;
+    font-size: 1.5vw;
+    position: absolute;
+    left: 50%;
+    top:54.5vw;
+    transform: translate(-50%, -50%);
+    font-family: 'Open Sans' sans-serif;
+    font-weight: 300;
 }
 
 
@@ -39,8 +59,14 @@ body {
     position: absolute;
     left: 44vw;
     top: 53vw;
+    display: none;
 }
 
+.container-3{
+    position: absolute;
+    top: -1vw;
+    left: -0.2%;
+}
 
 #selection-rect {
     position: absolute;
@@ -55,10 +81,11 @@ body {
     width: 95%;
     height: 100vh; 
     overflow: hidden; 
+    z-index: 100;
 }
 
 #preloader{
-    background: #000 url(images/preloader.gif) no-repeat center center;
+    background: #fff url(images/preloader.gif) no-repeat center center;
     height: 100vh;
     width: 100%;
     position: fixed;
@@ -412,7 +439,7 @@ text-decoration: none;
     position: absolute;
     top: 36.5vw;
     left: 24.7vw;
-    z-index: 1;
+    z-index: 100;
     height: auto;
 }
 
@@ -503,7 +530,6 @@ text-decoration: none;
     position: absolute;
     top: 5vw;
     left: 30.2vw;
-    z-index: 1;
     height: auto;
 }
 
@@ -539,7 +565,7 @@ text-decoration: none;
     position: absolute;
     top: 41.42vw;
     left: 48.72vw;
-    z-index: 1;
+    z-index: 100;
     height: auto;
 }
 
@@ -584,7 +610,7 @@ text-decoration: none;
     position: absolute;
     top: 31.45vw;
     left: 20.95vw;
-    z-index: 0;
+    z-index: 300;
     height: auto;
 }
 
@@ -632,7 +658,13 @@ text-decoration: none;
     height: auto;
 }
 
+.clicked {
+    z-index: 1 !important;
+}
 
+:is(img, dotlottie-player) {
+    z-index: 10;
+}
 
 
 

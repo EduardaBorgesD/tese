@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     fernandoImage.addEventListener("mouseenter", function() {
         text1.style.display = "block";
-        document.body.style.backgroundColor = "#FFF6A6";
+        document.body.style.backgroundColor ="#FFDDCB";
         setTimeout(addDropAnimation, 10);
     });
     fernandoImage.addEventListener("mouseleave", function() {
@@ -96,7 +96,8 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     albertoImage.addEventListener("mouseenter", function() {
         text2.style.display = "block";
-        document.body.style.backgroundColor = "#E6FDA5";
+        document.body.style.backgroundColor = "#B6D3AF";
+        setTimeout(addDropAnimation, 10);
     });
     albertoImage.addEventListener("mouseleave", function() {
     text2.style.display = "none";
@@ -109,7 +110,8 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     alvaroImage.addEventListener("mouseenter", function() {
         text3.style.display = "block";
-        document.body.style.backgroundColor = "#BDEFFF";
+        document.body.style.backgroundColor = "#FFE298";
+        setTimeout(addDropAnimation, 10);
     });
     alvaroImage.addEventListener("mouseleave", function() {
         text3.style.display = "none";
@@ -122,7 +124,8 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     ricardoImage.addEventListener("mouseenter", function() {
         text4.style.display = "block";
-        document.body.style.backgroundColor = "#D8C5FF";
+        document.body.style.backgroundColor = "#F38686";
+        setTimeout(addDropAnimation, 10);
     });
     ricardoImage.addEventListener("mouseleave", function() {
         text4.style.display = "none";

@@ -5,24 +5,20 @@ body {
   height: 100vh;
   margin: 0;
   background-color: #f0f0f0;
+}
+
+#background-image {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
   overflow: hidden;
 }
 
-
-#background-image {
-  top: -2vw;
-  left: -5vw;
-  position: absolute;
-  width: 100vw;
-  height: auto;
-}
-
 #background {
-  width: 120vw;
-  height: auto;
-  z-index: 1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
-
 .draggable {
   width: 10vw;
   height: auto;
@@ -31,19 +27,28 @@ body {
 }
 
 #png-container {
-  position: absolute;
-  top: 47vw;
-  left: 10vw;
-  width: 80vw;
-  height: 15vh;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  padding: -2vw;
+  background-color: rgba(240, 240, 240, 1);
+  border-top: 1px solid #cccccc;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
   display: flex;
-  flex-direction: row;
-  gap: 3vw;
-  z-index: 20;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 1000;
+}
+
+#png-container img {
+  width: 7%;
+  height: auto;
 }
 
 #preloader {
-    background: #000 url(images/preloader.gif) no-repeat center center;
+    background: #fff url(images/preloader.gif) no-repeat center center;
     height: 100vh;
     width: 100%;
     position: fixed;
@@ -108,7 +113,7 @@ body {
   }
 
   .rio-gif{
-    width: 15.75vw;
+    width: 16.75vw;
     height: auto;
   }
 
@@ -116,11 +121,12 @@ body {
     width: 60vw;
     height: auto;
     position: absolute;
-    top: 10vw;
+    top: 18vw;
     left: 20vw;
     opacity: 50%;
     z-index: 100;
     transform: scaleX(-1);
+    pointer-events: none;
   }
 
   .draggable1 {
@@ -132,4 +138,17 @@ body {
 
   .nuvem-gif{
     width: 100vw;
+    z-index: 400;
+  }
+
+  .arvore-gif{
+    width: 30vw;
+    z-index: 500;
+    pointer-events: none;
+  }
+
+  .borboleta-gif{
+    width: 100vw;
+    z-index: 600;
+    pointer-events: none;
   }

@@ -26,6 +26,29 @@ body, html {
     cursor: pointer;
 }
 
+#opiario {
+    width: 34vw;
+    left: 34vw;
+    top: 5vw;
+    cursor: pointer;
+}
+
+#comoda1 {
+    width: 13vw;
+    left: 75vw;
+    top: 25vw;
+    cursor: pointer;
+}
+
+#comoda2 {
+    width: 36vw;
+    left: 63vw;
+    top: 18vw;
+    cursor: pointer;
+}
+
+
+
 #candeeiro1 {
     width: 8vw;
     top: -7.5vw;
@@ -50,6 +73,14 @@ body, html {
     width: 30vw;
     left: 36vw;
     top: 28vw;
+    cursor: pointer;
+    z-index: 400;
+}
+
+#planta {
+    width: 79vw;
+    left: 0vw;
+    top: 17.2vw;
     cursor: pointer;
 }
 
@@ -156,8 +187,8 @@ body, html {
 }
 
 #preloader{
-    background: #000 url(images/preloader.gif) no-repeat center center;
-    height: 100vh;
+    background: #fff url(images/preloader.gif) no-repeat center center;
+    height: 100%;
     width: 100%;
     position: fixed;
     z-index: 100;

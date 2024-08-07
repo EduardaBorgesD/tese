@@ -1,66 +1,83 @@
 document.addEventListener("DOMContentLoaded", function () {
-    console.log("DOM fully loaded and parsed");
     const html = document.documentElement;
     const canvas = document.querySelector("canvas");
     const context = canvas.getContext("2d");
-
     const loader = document.getElementById('preloader');
-    window.addEventListener('load', function() {
-        console.log("Window fully loaded");
-        loader.style.display = 'none';
-    });
-
     const frameCount = 3201;
     const currentFrame = (index) => `images/frames/${index.toString().padStart(5, "0")}.jpg`;
+    
+    const imageCache = {};
+    let currentIndex = 1;
+    const chunkSize = 200;
 
-    const preloadImages = () => {
-        for (let i = 1; i < frameCount; i++) {
-            const img = new Image();
-            img.src = currentFrame(i);
+    canvas.width = 3660;
+    canvas.height = 2100;
+
+    const loadImage = (index) => {
+        return new Promise((resolve, reject) => {
+            if (imageCache[index]) {
+                resolve(imageCache[index]);
+            } else {
+                const img = new Image();
+                img.onload = () => {
+                    imageCache[index] = img;
+                    resolve(img);
+                };
+                img.onerror = reject;
+                img.src = currentFrame(index);
+            }
+        });
+    };
+
+    const drawImage = (index) => {
+        loadImage(index).then(img => {
+            context.drawImage(img, 0, 0);
+        });
+    };
+
+    const loadChunk = (start, end) => {
+        for (let i = start; i <= end && i <= frameCount; i++) {
+            loadImage(i);
         }
     };
 
-    const img = new Image();
-    img.src = currentFrame(1);
-    canvas.width = 3660;
-    canvas.height = 2100;
-    img.onload = function () {
-        context.drawImage(img, 0, 0);
-    };
-
-    const updateImage = (index) => {
-        img.src = currentFrame(index);
-        img.onload = function() {
-            context.drawImage(img, 0, 0);
-        };
-    };
-
-    var setHeight = document.getElementById("set-height");
-    var scrollContainer = document.querySelector(".scroll-container");
-
     const scrollToTopButton = document.getElementById("scrollToTopButton");
-
     scrollToTopButton.addEventListener("click", () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 
+    let ticking = false;
     window.addEventListener("scroll", () => {
-        const scrollTop = html.scrollTop;
-        const maxScrollTop = html.scrollHeight - window.innerHeight;
-        const scrollFraction = scrollTop / maxScrollTop;
-        const frameIndex = Math.min(
-            frameCount - 1,
-            Math.ceil(scrollFraction * frameCount),
-        );
+        if (!ticking) {
+            window.requestAnimationFrame(() => {
+                const scrollTop = html.scrollTop;
+                const maxScrollTop = html.scrollHeight - window.innerHeight;
+                const scrollFraction = scrollTop / maxScrollTop;
+                const frameIndex = Math.min(
+                    frameCount - 1,
+                    Math.ceil(scrollFraction * frameCount)
+                );
 
-        requestAnimationFrame(() => updateImage(frameIndex + 1));
+                if (frameIndex !== currentIndex) {
+                    currentIndex = frameIndex;
+                    drawImage(currentIndex + 1);
 
-        if (frameIndex + 1 === frameCount) {
-            scrollToTopButton.style.display = 'block';
-        } else {
-            scrollToTopButton.style.display = 'none';
+                    const nextChunkStart = Math.floor(currentIndex / chunkSize) * chunkSize + 1;
+                    loadChunk(nextChunkStart, nextChunkStart + chunkSize - 1);
+                }
+
+                scrollToTopButton.style.display = (frameIndex + 1 === frameCount) ? 'block' : 'none';
+
+                ticking = false;
+            });
+            ticking = true;
         }
     });
 
-    preloadImages();
+    loadChunk(1, chunkSize);
+    drawImage(1);
+
+    loadImage(1).then(() => {
+        loader.style.display = 'none';
+    });
 });

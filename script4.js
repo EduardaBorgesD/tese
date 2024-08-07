@@ -3,11 +3,20 @@ document.addEventListener('DOMContentLoaded', () => {
     const background = document.getElementById('background-image');
     const backgroundAudio = document.getElementById('background-audio');
 
+    const audioContainer = document.querySelector('.audios');
+if (audioContainer) {
+    const audioElements = audioContainer.querySelectorAll('audio');
+    audioElements.forEach(audio => {
+        audio.volume = 0.2;
+    });
+}
+
     if (backgroundAudio) {
         backgroundAudio.loop = true;
-        backgroundAudio.volume = 0.2;
+        backgroundAudio.volume = 0.15;
         backgroundAudio.play();
     }
+
 
     let currentAudio = null;
     const positionedGifs = new Set();
@@ -41,7 +50,9 @@ document.addEventListener('DOMContentLoaded', () => {
             'png3': 'sheepG.gif',
             'png4': 'nuvem.gif',
             'png5': 'aldeia.gif',
-            'png6': 'sol.gif'
+            'png6': 'sol.gif',
+            'png7': 'arvore.gif',
+            'png8': 'borboleta.gif'
         };
 
         const audioMapping = {
@@ -50,7 +61,9 @@ document.addEventListener('DOMContentLoaded', () => {
             'sheepG.gif': 'gif-ovelha-audio',
             'aldeia.gif': 'gif-lapide-audio',
             'nuvem.gif': 'gif-nuvem-audio',
-            'sol.gif': 'gif-sol-audio'
+            'sol.gif': 'gif-sol-audio',
+            'arvore.gif': 'gif-arvore-audio',
+            'borboleta.gif': 'gif-borboleta-audio'
         };
 
         const newGif = gifMapping[id];
@@ -89,26 +102,42 @@ document.addEventListener('DOMContentLoaded', () => {
             } else if (newGif === 'rioG.gif'){
                 droppedImage.classList.add('rio-gif');
             } else if (newGif === 'nuvem.gif'){
-                droppedImage.classList.add('nuvem-gif');}else{
+                droppedImage.classList.add('nuvem-gif');}
+                else if (newGif === 'arvore.gif'){
+                    droppedImage.classList.add('arvore-gif')}
+                    else if (newGif === 'borboleta.gif'){
+                        droppedImage.classList.add('borboleta-gif')}else{
                 droppedImage.classList.add('draggable1');
             }
 
             droppedImage.style.position = 'absolute';
             if (newGif === 'rioG.gif') {
-                droppedImage.style.left = '42vw';
-                droppedImage.style.top = '8.7vw';
+                droppedImage.style.left = '32.9vw';
+                droppedImage.style.top = '11.7vw';
+                droppedImage.style.position = 'fixed';
+                droppedImage.draggable = false;
             } else if (newGif === 'nuvem.gif') {
                     droppedImage.style.left = '0vw';
-                    droppedImage.style.top = '-2vw';
+                    droppedImage.style.top = '-7vw';
                     droppedImage.style.position = 'fixed';
                     droppedImage.draggable = false;
-            }
+            } else if (newGif === 'arvore.gif') {
+                droppedImage.style.top = '0vw';
+                droppedImage.style.left = '73.2vw';
+                droppedImage.style.position = 'fixed';
+                droppedImage.draggable = false;
+            } else if (newGif === 'borboleta.gif') {
 
+                droppedImage.style.left = '0vw';
+                droppedImage.style.position = 'fixed';
+                droppedImage.draggable = false;
+            }
                 else if (newGif === 'sol.gif'){
                 droppedImage.style.left = `${x - (droppedImage.width / 2)}px`;
                 const sky = Math.max(0, Math.min(10, y - (droppedImage.height / 2) * 100 / window.innerHeight)) + 'vw';
                 droppedImage.style.top = sky;
-            } else {
+            }  else if (newGif === 'nuvem.gif') {
+                droppedImage.style.left = '0vw';}else {
                 droppedImage.style.left = `${x - (droppedImage.width / 2)}px`;
                 droppedImage.style.top = `${y - (droppedImage.height / 2)}px`;
             }
